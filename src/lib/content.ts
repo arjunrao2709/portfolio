@@ -214,6 +214,8 @@ export const caseStudies: CaseStudy[] = [
       ],
     },
     images: [],
+    liveUrl: 'https://drive.google.com/file/d/15cbwlLK-u8qQrquXaTYoGdTGKdsrw7nv/view?usp=sharing',
+    liveUrlLabel: 'View the research deck',
   },
 ]
 

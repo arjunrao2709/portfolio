@@ -162,7 +162,7 @@ export default function CaseStudyPage({ params }: Props) {
               className="group inline-flex items-center gap-3 bg-accent text-white px-6 py-4 hover:bg-accent-dark transition-colors duration-200"
             >
               <ExternalLink className="w-4 h-4 shrink-0" />
-              <span className="text-sm font-semibold">Check out the work in action</span>
+              <span className="text-sm font-semibold">{cs.liveUrlLabel ?? 'Check out the work in action'}</span>
               <ArrowUpRight className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </section>

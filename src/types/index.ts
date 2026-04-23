@@ -37,6 +37,7 @@ export interface CaseStudy {
   }
   images: CaseStudyImage[]
   liveUrl?: string
+  liveUrlLabel?: string
 }
 
 export interface Brand {
