@@ -15,13 +15,13 @@ export const projects: Project[] = [
   {
     id: 'theklub',
     title: 'theKlub.world',
-    role: 'Design Lead',
-    year: '2022–23',
-    tagline: 'Community-first social commerce.',
+    role: 'Head of Product',
+    year: '2023–24',
+    tagline: 'Your new home for active travel.',
     description:
-      'Led end-to-end UX for a social commerce platform connecting creators and communities across Southeast Asia. Scaled design 0→1 and established the team\'s first design critique rituals.',
-    accent: '#F97316',
-    tags: ['Social', 'Commerce', 'Mobile'],
+      'Built a sports & wellness travel platform from zero — through two research-driven pivots — to £30k/month. Led product, design, social positioning, and engineering.',
+    accent: '#FBBF24',
+    tags: ['Travel', 'Sports & Wellness', '0→1'],
   },
   {
     id: 'ula',
@@ -104,18 +104,60 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'theklub',
     title: 'theKlub.world',
-    role: 'Design Lead',
-    year: '2022–23',
-    accent: '#F97316',
-    tags: ['Social', 'Commerce', 'Mobile'],
-    overview: '',
-    challenge: '',
-    sections: [],
+    role: 'Head of Product',
+    year: '2023–24',
+    accent: '#FBBF24',
+    tags: ['Travel', 'Sports & Wellness', '0→1'],
+    overview:
+      'theKlub.world is a sports and wellness travel platform connecting fitness-minded travellers with ambassador-led, small-batch trips — curated experiences built around shared athletic pursuits. I joined with nothing: no product, no direction, no validated market. I left with a platform doing £30k a month.',
+    challenge:
+      'The founder came with a belief, not a brief. He wanted to do something for boutique hotels — but what exactly, and for whom, was entirely open. My first job wasn\'t to design a product. It was to find the right problem worth solving.',
+    sections: [
+      {
+        label: 'Discovery',
+        heading: 'Finding the right problem before building the wrong product',
+        body: [
+          'We started where the founder\'s instinct pointed: boutique hotels. These are properties with personality, often better suited to active travellers than large chains — but they had no obvious distribution problem we could solve better than what already existed.',
+          'Talking to travellers revealed something more interesting. Athletes and fitness-minded people face a consistent, underserved friction when travelling for sport. Large chain hotels aren\'t built for them — training schedules, equipment storage, dietary needs, group coordination — none of it fits neatly into the standard hotel experience. Boutique properties were more flexible, but finding the right one was hard and trusting it was harder.',
+          'That was pivot one: away from a general boutique hotel platform, toward a purpose-built sports travel product.',
+        ],
+      },
+      {
+        label: 'The Pivot That Defined the Product',
+        heading: 'From sports travel to community-led experiences',
+        body: [
+          'Running the sports travel platform revealed a subtler problem beneath the logistics one. The deeper friction wasn\'t just accommodation — it was isolation. People who wanted to stay fit while travelling struggled to find others with the same drive and the same sport. Travelling for fitness is one thing. Finding a community that makes staying active feel effortless and exciting is something else entirely.',
+          'At the same time, we were watching a clear cultural trend: micro-influencers and sports coaches building deeply engaged audiences around specific sports — padel, trail running, open-water swimming, yoga retreats. These creators had trust and community but no infrastructure for organising trips.',
+          'In August, we made pivot two. We repositioned theKlub as a platform for ambassadors — coaches and micro-influencers — to organise and sell small-batch sports trips to their audiences. We became the infrastructure layer between creator and community, handling bookings, payments, logistics, and the hotel layer underneath.',
+          'The proposition crystallised: "Your New Home for Active Travel." Not a marketplace. A curated, community-first experience built around people who coach and lead — and the followers who trust them enough to travel with them.',
+        ],
+      },
+      {
+        label: 'Product & Design',
+        heading: 'Building the platform from zero',
+        body: [
+          'I led product end-to-end alongside a visual designer. My scope was unusually wide: product strategy, conversion journey, social media positioning, and managing the engineering team. The design work was inseparable from the business decisions.',
+          'The core surfaces we built were the trip discovery and booking flow for travellers, and the ambassador portal for coaches and influencers to create, manage, and sell their trips. Conversion was the constant north star — every design decision was evaluated against whether it moved someone closer to booking or closer to creating a trip.',
+          'Social positioning was a significant workstream in itself. The platform needed to speak to two distinct audiences — athletes who travel, and creators who lead — with a single coherent brand identity. The "Klub" framing was deliberate: exclusive-feeling but welcoming, athletic but not intimidating.',
+        ],
+      },
+    ],
     outcome: {
-      summary: '',
-      metrics: [],
+      summary:
+        'By the time I left, theKlub was generating £30,000 a month in consistent revenue — built from nothing, through two pivots, in under a year.',
+      metrics: [
+        { value: '£30k', label: 'Monthly revenue at exit' },
+        { value: '0→1', label: 'Full product build' },
+        { value: '2', label: 'Research-driven pivots' },
+        { value: '1', label: 'Year to profitability' },
+      ],
     },
-    images: [],
+    images: [
+      { src: '/projects/theklub/screen-1.jpg', caption: 'after:Homepage' },
+      { src: '/projects/theklub/screen-2.jpg', caption: 'after:Trip discovery' },
+      { src: '/projects/theklub/screen-3.jpg', caption: 'after:Trip detail' },
+      { src: '/projects/theklub/screen-4.jpg', caption: 'after:Ambassador portal' },
+    ],
   },
   {
     id: 'ula',
