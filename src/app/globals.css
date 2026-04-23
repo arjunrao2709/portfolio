@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent-primary: #7C3AED;
+  --accent-bright: #A855F7;
+  --accent-secondary: #F59E0B;
+  --bg-dark: #0C0A14;
+  --bg-rich: #13111F;
+  --bg-light: #F8F7FF;
+  --bg-card: #1A1730;
+  --text-primary: #F1EEF9;
+  --text-muted: #9D93C0;
+  --text-dark: #1A1730;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0C0A14;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0A14;
+}
+::-webkit-scrollbar-thumb {
+  background: #7C3AED;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A855F7;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #7C3AED;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #A855F7, #7C3AED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
