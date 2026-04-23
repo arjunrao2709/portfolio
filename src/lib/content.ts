@@ -262,7 +262,7 @@ export const leadershipStats: LeadershipStat[] = [
 export const leadershipHighlights = [
   'Scaled 0→1 design teams at StylePass.ai and theKlub.world',
   'Established design critique rituals, feedback frameworks, and career ladders',
-  '1:1 mentoring for 30+ junior and mid-level designers across 4 companies',
+  '1:1 mentoring for 30+ junior and mid-level designers across multiple organisations',
 ]
 
 export const leadershipQuote = {
