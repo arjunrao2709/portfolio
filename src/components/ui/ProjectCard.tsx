@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
+import Link from 'next/link'
 import Badge from './Badge'
 import type { Project } from '@/types'
 import { cn } from '@/lib/cn'
@@ -68,12 +69,14 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         </p>
 
         {/* CTA */}
-        <div className="mt-8 flex items-center gap-2 font-body font-semibold text-sm uppercase tracking-widest" style={{ color: project.accent }}>
+        <Link
+          href={`/work/${project.id}`}
+          className="mt-8 inline-flex items-center gap-2 font-body font-semibold text-sm uppercase tracking-widest"
+          style={{ color: project.accent }}
+        >
           <span>View Case Study</span>
-          <ArrowUpRight
-            className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-          />
-        </div>
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+        </Link>
       </div>
     </motion.div>
   )
