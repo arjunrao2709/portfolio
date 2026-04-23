@@ -1,14 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Link, X, Globe } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import FadeUp from '@/components/motion/FadeUp'
-
-const socials = [
-  { icon: Link, label: 'LinkedIn', href: '#' },
-  { icon: X, label: 'Twitter / X', href: '#' },
-  { icon: Globe, label: 'Website', href: '#' },
-]
 
 export default function Contact() {
   return (
@@ -47,27 +40,22 @@ export default function Contact() {
         <FadeUp delay={0.2}>
           <a
             href="mailto:hello@arjunrao.design"
-            className="inline-block text-base md:text-lg font-semibold text-ink hover:text-accent transition-colors duration-200 mb-12 underline underline-offset-4 decoration-border-strong hover:decoration-accent"
+            className="inline-block text-base md:text-lg font-semibold text-ink hover:text-accent transition-colors duration-200 mb-10 underline underline-offset-4 decoration-border-strong hover:decoration-accent"
           >
             hello@arjunrao.design
           </a>
         </FadeUp>
 
         <FadeUp delay={0.24}>
-          <div className="flex items-center gap-3">
-            {socials.map(({ icon: Icon, label, href }) => (
-              <motion.a
-                key={label}
-                href={href}
-                whileHover={{ scale: 1.08 }}
-                transition={{ duration: 0.15 }}
-                aria-label={label}
-                className="w-11 h-11 border border-border flex items-center justify-center text-ink-2 hover:text-ink hover:border-border-strong transition-colors duration-200"
-              >
-                <Icon className="w-3.5 h-3.5" />
-              </motion.a>
-            ))}
-          </div>
+          <a
+            href="https://www.linkedin.com/in/arjunrao2709/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-ink-2 hover:text-accent transition-colors duration-200"
+          >
+            LinkedIn
+            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
         </FadeUp>
 
       </div>
