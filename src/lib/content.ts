@@ -17,9 +17,9 @@ export const projects: Project[] = [
     title: 'Ula',
     role: 'Senior Product Designer',
     year: '2021–22',
-    tagline: 'Digitising Indonesia\'s informal retail.',
+    tagline: 'Understanding Indonesia\'s 64 million warung owners.',
     description:
-      'Redesigned the B2B purchasing experience for informal retailers in Indonesia, reducing friction across a complex supply chain and driving measurable increase in order completion rates.',
+      'Led a 4-week field research sprint across 7 Indonesian cities — 210 warung owners interviewed, 5 archetypes identified — that fundamentally repositioned how Ula designed its B2B procurement product.',
     accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
   },
@@ -167,12 +167,50 @@ export const caseStudies: CaseStudy[] = [
     year: '2021–22',
     accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
-    overview: '',
-    challenge: '',
-    sections: [],
+    overview:
+      'Ula is a B2B startup digitising Indonesia\'s informal retail economy — the millions of warungs (small neighbourhood stores) that form the backbone of how everyday goods move through the country. As Senior Product Designer, my most formative contribution was leading and synthesising a 4-week field research sprint across seven Indonesian cities: 628 stores visited, 210 warung owners interviewed, and five distinct owner archetypes identified — research that fundamentally changed how Ula designed its product.',
+    challenge:
+      'Before this research, Ula\'s product was being designed for a largely imagined user. "The warung owner" was treated as a single type of person with similar motivations and behaviours. But spend a week in Jadetabek and you quickly see how wrong that assumption is. A 35-year-old woman running a tech-enabled store with QR payments and WhatsApp procurement is not the same person as a retired 50-year-old man who inherited a store and opens it to pass the time. The challenge: we needed to understand who our users actually were before we could build anything useful for them.',
+    sections: [
+      {
+        label: 'Field Research',
+        heading: 'Understanding the people behind the stores',
+        body: [
+          'Over four weeks in March 2022, I worked with a research team across Jakarta, Bandung, Semarang, Surabaya, Yogyakarta, Malang, and Bali. We visited 628 stores and conducted 210 structured interviews covering daily sales, inventory value, procurement behaviour, operational hours, store age, and location type.',
+          'The data surfaced immediately actionable patterns. Fifty-two percent of visited warungs held inventory under 15 million rupiah and generated up to 2 million rupiah daily — a natural sweet spot for a digitised procurement platform. Stores on main roads consistently outperformed all other locations. Stores under six years old showed strong growth trajectories: 60% already making 1M/day, 40% hitting between 1.5M and 5M.',
+          'But the most important finding wasn\'t in the numbers. It was in the people.',
+        ],
+      },
+      {
+        label: 'The Archetypes',
+        heading: 'Not all warungs are equal',
+        body: [
+          'We identified five fundamentally distinct owner archetypes, grouped into two categories: 103 "Potential Leaders" and 107 passive "Followers."',
+          'Socially Engaged owners (44 stores) ran their stores as community anchors — they extended credit, knew customers by name, and added services like photocopying when they spotted a neighbourhood need. Their stores retained customers through trust, not price. Entrepreneurial & Innovative owners (37 stores) were growth-minded and adaptive — pivoting store formats, adding product lines, and reading trends before competitors. One had converted an inherited cart warung into a car warung with leather sofas, generating consistent word-of-mouth from Gojek drivers.',
+          'Community-Driven owners (32 stores), predominantly from the Madura diaspora, operated with remarkable discipline — regulated by community rules (no two Maduran warungs within 100 metres), sharing procurement knowledge weekly, and running 24-hour stores as a collective growth strategy. Tech-Enabled owners (28 stores) were early adopters running QR payments, WhatsApp procurement, and digital goods sales. One owner in Semarang had taught herself everything through the SRC community and had fully digitised her operations.',
+          'The Followers — Generic Store owners (107 stores) — were passive and low-urgency, often running stores as supplementary income or retirement activity. Recognising who was not our user was as important as finding who was.',
+        ],
+      },
+      {
+        label: 'Design Response',
+        heading: 'Archetypes as the foundation for every product decision',
+        body: [
+          'The procurement flow was redesigned around how different owners actually restock. Community-driven and socially engaged stores restock daily; entrepreneurial stores run 2–3x weekly cycles with higher per-order values. Tech-enabled owners needed clean integration with existing digital tools — we couldn\'t assume offline-first. These differences directly shaped the ordering flow, push notification strategy, and restock reminder design.',
+          'Persona pain points drove feature prioritisation. The entrepreneurial owner\'s fear of hiring — fraud, theft, difficulty tracking income — informed how we designed multi-user account features and transparency tools. The tech-enabled persona\'s frustration with online procurement (inability to check expiry dates, slow delivery) shaped the product catalogue and supplier trust signals.',
+          'Mang Asep — the Generic Store owner — was explicitly deprioritised as a primary user. This was as important a design decision as any. Building for someone whose primary motivation was "to avoid getting bored" would have created design compromises that served no one well. The research gave us the clarity and evidence to make that call.',
+          'The five archetypes became canonical references across product, engineering, and operations — invoked in sprint planning, product reviews, and hiring conversations. Decisions were measured against whether they served Ferra, Roiz, or Pak Surya — not "the warung owner."',
+        ],
+      },
+    ],
     outcome: {
-      summary: '',
-      metrics: [],
+      summary:
+        'The field research delivered more than data. It gave Ula a shared language for its users and the evidence to make hard prioritisation decisions. The archetypes directly shaped the redesigned B2B purchasing experience, reducing friction across the supply chain and improving order completion rates.',
+      metrics: [
+        { value: '210', label: 'Warung owners interviewed' },
+        { value: '7', label: 'Cities across Indonesia' },
+        { value: '5', label: 'Owner archetypes identified' },
+        { value: '103', label: 'High-potential stores segmented as primary users' },
+      ],
     },
     images: [],
   },
