@@ -18,7 +18,7 @@ const config: Config = {
         'text-dark': '#0A0A0A',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         'pulse-dot': {
