@@ -31,13 +31,6 @@ export default function Contact() {
         </FadeUp>
 
         <FadeUp delay={0.16}>
-          <p className="text-sm text-ink-3 max-w-xs leading-relaxed mb-10">
-            Open to advisory, fractional design leadership,
-            and select consulting engagements.
-          </p>
-        </FadeUp>
-
-        <FadeUp delay={0.2}>
           <a
             href="mailto:hello@arjunrao.design"
             className="inline-block text-base md:text-lg font-semibold text-ink hover:text-accent transition-colors duration-200 mb-10 underline underline-offset-4 decoration-border-strong hover:decoration-accent"
