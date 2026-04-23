@@ -35,13 +35,13 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-bg-dark/90 backdrop-blur-md border-b border-white/[0.06]' : ''
+          scrolled ? 'bg-white/90 backdrop-blur-md border-b border-stone-200' : ''
         }`}
       >
         <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 h-14 flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-sm font-semibold text-accent-primary hover:text-white transition-colors duration-200"
+            className="text-sm font-semibold text-accent-primary hover:text-stone-900 transition-colors duration-200"
           >
             AR
           </button>
@@ -51,7 +51,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-xs text-text-muted hover:text-white transition-colors duration-200"
+                className="text-xs text-text-muted hover:text-stone-900 transition-colors duration-200"
               >
                 {link.label}
               </button>
@@ -60,7 +60,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-text-muted hover:text-white transition-colors"
+            className="md:hidden text-text-muted hover:text-stone-900 transition-colors"
           >
             <Menu className="w-4 h-4" />
           </button>
@@ -74,11 +74,11 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[100] bg-bg-dark flex flex-col items-start justify-center px-8"
+            className="fixed inset-0 z-[100] bg-white flex flex-col items-start justify-center px-8"
           >
             <button
               onClick={() => setMenuOpen(false)}
-              className="absolute top-4 right-6 text-text-muted hover:text-white transition-colors"
+              className="absolute top-4 right-6 text-text-muted hover:text-stone-900 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -90,7 +90,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-2xl font-medium text-white hover:text-accent-primary transition-colors duration-200 text-left"
+                  className="text-2xl font-medium text-stone-900 hover:text-accent-primary transition-colors duration-200 text-left"
                 >
                   {link.label}
                 </motion.button>

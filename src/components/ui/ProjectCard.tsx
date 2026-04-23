@@ -1,9 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import type { Project } from '@/types'
+import { cn } from '@/lib/cn'
+
+const projectColors: Record<string, string> = {
+  stylepass: 'bg-stone-100',
+  theklub:   'bg-stone-800',
+  ula:       'bg-stone-200',
+}
 
 interface ProjectCardProps {
   project: Project
@@ -11,40 +17,41 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
+  const bg = projectColors[project.id] ?? 'bg-stone-100'
+
   return (
-    <motion.div
-      whileHover={{ backgroundColor: '#111111' }}
-      transition={{ duration: 0.15 }}
-      className="group bg-bg-dark"
-    >
-      <Link href={`/work/${project.id}`} className="block px-6 md:px-10 py-8 md:py-10">
-        <div className="flex items-start justify-between gap-8">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-xs text-accent-primary font-medium">{project.role}</span>
-              <span className="text-xs text-text-muted">{project.year}</span>
-            </div>
-
-            <h3 className={`font-semibold text-white mb-2 leading-snug ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
-              {project.title}
-            </h3>
-
-            <p className="text-sm text-text-muted leading-relaxed max-w-xl mb-4">
-              {project.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span key={tag} className="text-xs text-text-muted/60 border border-white/[0.07] px-2 py-0.5">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <ArrowUpRight className="w-4 h-4 text-text-muted group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 shrink-0 mt-1" />
+    <Link href={`/work/${project.id}`} className="group block">
+      {/* Thumbnail */}
+      <motion.div
+        whileHover={{ scale: 1.01 }}
+        transition={{ duration: 0.2 }}
+        className={cn(
+          'w-full rounded-sm overflow-hidden mb-4',
+          bg,
+          featured ? 'aspect-[4/3]' : 'aspect-[4/3]'
+        )}
+      >
+        <div className="w-full h-full flex items-end p-5">
+          <span className="text-xs font-medium opacity-30 uppercase tracking-widest">
+            {project.title}
+          </span>
         </div>
-      </Link>
-    </motion.div>
+      </motion.div>
+
+      {/* Meta */}
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-sm font-semibold text-stone-900 mb-0.5 group-hover:text-accent-primary transition-colors duration-200">
+            {project.title}
+          </h3>
+          <p className="text-xs text-text-muted">{project.role} · {project.year}</p>
+        </div>
+        <div className="flex flex-wrap gap-1.5 justify-end">
+          {project.tags.map((tag) => (
+            <span key={tag} className="text-xs text-text-muted">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </Link>
   )
 }

@@ -9,16 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'accent-primary': '#FBBF24',
-        'bg-dark': '#0A0A0A',
-        'bg-light': '#FFFFFF',
-        'bg-card': '#111111',
-        'text-primary': '#FFFFFF',
-        'text-muted': '#6B6B6B',
-        'text-dark': '#0A0A0A',
+        'accent-primary': '#C27D12',
+        'bg-dark': '#FFFFFF',
+        'bg-light': '#F7F7F5',
+        'bg-card': '#F2F1EE',
+        'text-primary': '#111111',
+        'text-muted': '#888888',
+        'text-dark': '#111111',
       },
       fontFamily: {
         sans: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
       },
       keyframes: {
         'pulse-dot': {
