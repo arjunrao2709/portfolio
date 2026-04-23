@@ -9,7 +9,7 @@ export const projects: Project[] = [
     tagline: 'AI-powered personal styling at scale.',
     description:
       'Built the design function from scratch — from brand identity to AI-powered styling UX and a scalable design system serving thousands of users.',
-    accent: '#7C3AED',
+    accent: '#F59E0B',
     tags: ['AI/ML Product', 'Consumer', 'Design System'],
   },
   {
@@ -20,7 +20,7 @@ export const projects: Project[] = [
     tagline: 'Community-first social commerce.',
     description:
       'Led end-to-end UX for a social commerce platform connecting creators and communities across Southeast Asia. Scaled design 0→1 and established the team\'s first design critique rituals.',
-    accent: '#F59E0B',
+    accent: '#F97316',
     tags: ['Social', 'Commerce', 'Mobile'],
   },
   {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     tagline: 'Digitising Indonesia\'s informal retail.',
     description:
       'Redesigned the B2B purchasing experience for informal retailers in Indonesia, reducing friction across a complex supply chain and driving measurable increase in order completion rates.',
-    accent: '#A855F7',
+    accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
   },
 ]

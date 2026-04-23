@@ -23,7 +23,7 @@ export default function Leadership() {
               <div key={stat.label} className="flex flex-col gap-1" >
                 <span
                   className="font-display font-extrabold text-7xl md:text-8xl leading-none text-transparent bg-clip-text"
-                  style={{ backgroundImage: 'linear-gradient(135deg, #A855F7, #7C3AED)' }}
+                  style={{ backgroundImage: 'linear-gradient(135deg, #FCD34D, #F59E0B)' }}
                 >
                   {stat.value}
                 </span>
