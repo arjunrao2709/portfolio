@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Work', href: '#projects' },
   { label: 'Philosophy', href: '#philosophy' },
   { label: 'Leadership', href: '#leadership' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Research', href: '#publications' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -38,7 +39,8 @@ export default function Navbar() {
           scrolled ? 'bg-canvas/95 backdrop-blur-sm border-b border-border' : ''
         }`}
       >
-        <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 h-16 flex items-center justify-between">
+        <div className="px-6 md:px-16 lg:px-24">
+        <div className="max-w-5xl mx-auto h-16 flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="font-serif text-base font-bold text-ink hover:text-accent transition-colors duration-200"
@@ -65,6 +67,7 @@ export default function Navbar() {
           >
             <Menu className="w-5 h-5" />
           </button>
+        </div>
         </div>
       </motion.header>
 

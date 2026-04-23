@@ -5,6 +5,7 @@ import Brands from '@/components/sections/Brands'
 import Projects from '@/components/sections/Projects'
 import Philosophy from '@/components/sections/Philosophy'
 import Leadership from '@/components/sections/Leadership'
+import Experience from '@/components/sections/Experience'
 import Publications from '@/components/sections/Publications'
 import Contact from '@/components/sections/Contact'
 
@@ -18,6 +19,7 @@ export default function Home() {
         <Projects />
         <Philosophy />
         <Leadership />
+        <Experience />
         <Publications />
         <Contact />
       </main>

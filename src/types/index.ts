@@ -30,6 +30,7 @@ export interface CaseStudy {
   tags: string[]
   overview: string
   challenge: string
+  myRole?: string
   sections: CaseStudySection[]
   outcome: {
     summary: string
@@ -38,6 +39,13 @@ export interface CaseStudy {
   images: CaseStudyImage[]
   liveUrl?: string
   liveUrlLabel?: string
+}
+
+export interface ExperienceItem {
+  company: string
+  startDate: string
+  endDate: string
+  current?: boolean
 }
 
 export interface Brand {
