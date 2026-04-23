@@ -6,9 +6,9 @@ import { X, Menu } from 'lucide-react'
 
 const navLinks = [
   { label: 'Work', href: '#projects' },
-  { label: 'Brands', href: '#brands' },
   { label: 'Philosophy', href: '#philosophy' },
   { label: 'Leadership', href: '#leadership' },
+  { label: 'Research', href: '#publications' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -17,7 +17,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 60)
+    const handler = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
@@ -31,28 +31,27 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-bg-dark/95 backdrop-blur-sm border-b border-white/8' : 'bg-transparent'
+          scrolled ? 'bg-bg-dark/90 backdrop-blur-md border-b border-white/[0.06]' : ''
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 h-14 flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-display font-bold text-lg text-accent-primary hover:text-white transition-colors duration-200"
-            aria-label="Scroll to top"
+            className="text-sm font-semibold text-accent-primary hover:text-white transition-colors duration-200"
           >
             AR
           </button>
 
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="font-body text-xs font-medium text-text-muted hover:text-white transition-colors duration-200 uppercase tracking-widest"
+                className="text-xs text-text-muted hover:text-white transition-colors duration-200"
               >
                 {link.label}
               </button>
@@ -62,9 +61,8 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(true)}
             className="md:hidden text-text-muted hover:text-white transition-colors"
-            aria-label="Open menu"
           >
-            <Menu className="w-5 h-5" />
+            <Menu className="w-4 h-4" />
           </button>
         </div>
       </motion.header>
@@ -75,26 +73,24 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-bg-dark flex flex-col items-center justify-center"
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-[100] bg-bg-dark flex flex-col items-start justify-center px-8"
           >
             <button
               onClick={() => setMenuOpen(false)}
-              className="absolute top-5 right-6 text-text-muted hover:text-white transition-colors"
-              aria-label="Close menu"
+              className="absolute top-4 right-6 text-text-muted hover:text-white transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-4 h-4" />
             </button>
-
-            <nav className="flex flex-col items-center gap-8">
+            <nav className="flex flex-col gap-6">
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
                   onClick={() => handleNavClick(link.href)}
-                  className="font-display font-bold text-3xl text-white hover:text-accent-primary transition-colors duration-200"
+                  className="text-2xl font-medium text-white hover:text-accent-primary transition-colors duration-200 text-left"
                 >
                   {link.label}
                 </motion.button>

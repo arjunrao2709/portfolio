@@ -3,19 +3,13 @@
 import { motion } from 'framer-motion'
 import { itemVariants } from '@/components/motion/StaggerContainer'
 
-interface BrandLogoProps {
-  name: string
-}
-
-export default function BrandLogo({ name }: BrandLogoProps) {
+export default function BrandLogo({ name }: { name: string }) {
   return (
-    <motion.div
+    <motion.span
       variants={itemVariants}
-      className="flex items-center justify-center px-8 py-4"
+      className="text-sm font-medium text-black/30 hover:text-black/70 transition-colors duration-200 cursor-default whitespace-nowrap"
     >
-      <span className="font-display font-bold text-xl md:text-2xl text-black/25 hover:text-black transition-colors duration-300 cursor-default whitespace-nowrap">
-        {name}
-      </span>
-    </motion.div>
+      {name}
+    </motion.span>
   )
 }

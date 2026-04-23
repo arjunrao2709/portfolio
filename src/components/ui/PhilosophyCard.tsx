@@ -4,27 +4,19 @@ import { motion } from 'framer-motion'
 import { itemVariants } from '@/components/motion/StaggerContainer'
 import type { PhilosophyItem } from '@/types'
 
-interface PhilosophyCardProps {
-  item: PhilosophyItem
-}
-
-export default function PhilosophyCard({ item }: PhilosophyCardProps) {
+export default function PhilosophyCard({ item }: { item: PhilosophyItem }) {
   return (
     <motion.div
       variants={itemVariants}
-      className="group border-b border-white/8 py-10 last:border-b-0"
+      className="border-b border-white/[0.06] py-8 last:border-b-0"
     >
-      <div className="flex gap-8 items-start">
-        <span className="font-body text-xs font-semibold text-accent-primary shrink-0 mt-1.5 tracking-widest">
+      <div className="flex gap-6">
+        <span className="text-xs text-accent-primary font-medium mt-1 shrink-0 tabular-nums">
           {item.number}
         </span>
-        <div className="space-y-3">
-          <h3 className="font-display font-bold text-xl md:text-2xl text-white group-hover:text-accent-primary transition-colors duration-200">
-            {item.headline}
-          </h3>
-          <p className="font-body text-text-muted leading-relaxed">
-            {item.body}
-          </p>
+        <div>
+          <h3 className="text-base font-medium text-white mb-2">{item.headline}</h3>
+          <p className="text-sm text-text-muted leading-relaxed">{item.body}</p>
         </div>
       </div>
     </motion.div>

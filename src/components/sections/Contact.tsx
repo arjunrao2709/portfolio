@@ -12,59 +12,49 @@ const socials = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-bg-dark border-t border-white/8 py-24 md:py-36 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto">
-        {/* Availability badge */}
+    <section id="contact" className="bg-bg-dark border-t border-white/[0.06] py-24 px-6 md:px-16 lg:px-24">
+      <div className="max-w-5xl mx-auto">
         <FadeUp>
-          <div className="flex items-center gap-2 mb-12">
-            <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse-dot" />
-            <span className="font-body text-xs text-text-muted uppercase tracking-widest">
-              Open to new conversations
-            </span>
+          <div className="flex items-center gap-2 mb-10">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse-dot" />
+            <span className="text-xs text-text-muted">Available for new work</span>
           </div>
         </FadeUp>
 
-        {/* Headline */}
-        <FadeUp delay={0.1}>
-          <h2 className="font-display font-extrabold text-[clamp(2.5rem,8vw,7rem)] leading-[0.9] tracking-tight text-white mb-8 max-w-4xl">
-            Let&apos;s build something<br />remarkable.
+        <FadeUp delay={0.05}>
+          <h2 className="text-3xl md:text-5xl font-semibold text-white leading-tight mb-4">
+            Let&apos;s build something<br />together.
           </h2>
         </FadeUp>
 
-        {/* Sub-line */}
-        <FadeUp delay={0.2}>
-          <p className="font-body text-text-muted text-lg max-w-md leading-relaxed mb-14">
-            Available for advisory, fractional design leadership, and select consulting engagements.
+        <FadeUp delay={0.1}>
+          <p className="text-sm text-text-muted max-w-sm leading-relaxed mb-10">
+            Open to advisory, fractional design leadership, and select consulting engagements.
           </p>
         </FadeUp>
 
-        {/* Email */}
-        <FadeUp delay={0.3}>
+        <FadeUp delay={0.15}>
           <a
             href="mailto:hello@arjunrao.design"
-            className="group inline-flex items-center gap-3 font-display font-bold text-2xl md:text-4xl text-white hover:text-accent-primary transition-colors duration-200 mb-16"
+            className="group inline-flex items-center gap-2 text-lg font-medium text-white hover:text-accent-primary transition-colors duration-200 mb-10"
           >
-            <span className="relative">
-              hello@arjunrao.design
-              <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-accent-primary group-hover:w-full transition-all duration-400" />
-            </span>
-            <ArrowUpRight className="w-7 h-7 text-accent-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+            hello@arjunrao.design
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
           </a>
         </FadeUp>
 
-        {/* Socials */}
-        <FadeUp delay={0.4}>
-          <div className="flex items-center gap-3">
+        <FadeUp delay={0.2}>
+          <div className="flex items-center gap-2">
             {socials.map(({ icon: Icon, label, href }) => (
               <motion.a
                 key={label}
                 href={href}
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.15 }}
+                transition={{ duration: 0.1 }}
                 aria-label={label}
-                className="w-11 h-11 border border-white/15 flex items-center justify-center text-text-muted hover:text-white hover:border-white/40 transition-colors duration-200"
+                className="w-9 h-9 border border-white/10 flex items-center justify-center text-text-muted hover:text-white hover:border-white/30 transition-colors duration-200"
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-3.5 h-3.5" />
               </motion.a>
             ))}
           </div>

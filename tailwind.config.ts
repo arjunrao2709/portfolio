@@ -10,28 +10,24 @@ const config: Config = {
     extend: {
       colors: {
         'accent-primary': '#FBBF24',
-        'accent-bright': '#FDE68A',
-        'accent-secondary': '#FBBF24',
         'bg-dark': '#0A0A0A',
-        'bg-rich': '#111111',
         'bg-light': '#FFFFFF',
-        'bg-card': '#141414',
+        'bg-card': '#111111',
         'text-primary': '#FFFFFF',
-        'text-muted': '#666666',
+        'text-muted': '#6B6B6B',
         'text-dark': '#0A0A0A',
       },
       fontFamily: {
-        display: ['var(--font-syne)', 'sans-serif'],
-        body: ['var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         'pulse-dot': {
           '0%,100%': { opacity: '1' },
-          '50%': { opacity: '0.4' },
+          '50%': { opacity: '0.3' },
         },
       },
       animation: {
-        'pulse-dot': 'pulse-dot 2s ease-in-out infinite',
+        'pulse-dot': 'pulse-dot 2.5s ease-in-out infinite',
       },
     },
   },

@@ -5,18 +5,14 @@ import { brands } from '@/lib/content'
 
 export default function Brands() {
   return (
-    <section id="brands" className="bg-bg-light border-t border-black/10 py-20 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto">
+    <section id="brands" className="bg-bg-light border-t border-black/8 py-16 px-6 md:px-16 lg:px-24">
+      <div className="max-w-5xl mx-auto">
         <FadeUp>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.3em] text-black/30 text-center mb-12">
-            I&apos;ve designed for teams at
+          <p className="text-xs text-black/35 tracking-widest uppercase mb-10">
+            Previously at
           </p>
         </FadeUp>
-
-        <StaggerContainer
-          stagger={0.07}
-          className="flex flex-wrap justify-center items-center"
-        >
+        <StaggerContainer stagger={0.06} className="flex flex-wrap items-center gap-x-10 gap-y-4">
           {brands.map((brand) => (
             <BrandLogo key={brand.name} name={brand.name} />
           ))}
