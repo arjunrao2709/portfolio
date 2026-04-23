@@ -30,27 +30,12 @@ export default function Hero() {
         </FadeUp>
 
         <FadeUp delay={0.18}>
-          <p className="text-sm text-ink-3 leading-relaxed max-w-sm mb-10">
-            Open to advisory roles, fractional design leadership,
-            and select consulting engagements.
-          </p>
-        </FadeUp>
-
-        <FadeUp delay={0.22}>
-          <div className="flex items-center gap-6">
-            <a
-              href="#projects"
-              className="inline-flex items-center bg-accent text-white text-sm font-semibold px-6 py-3.5 hover:bg-accent-dark transition-colors duration-200"
-            >
-              View Work
-            </a>
-            <a
-              href="#contact"
-              className="text-sm font-medium text-ink-2 underline underline-offset-4 decoration-border-strong hover:text-ink hover:decoration-ink-2 transition-colors duration-200"
-            >
-              Get in Touch
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="text-sm font-medium text-ink-2 underline underline-offset-4 decoration-border-strong hover:text-ink hover:decoration-ink-2 transition-colors duration-200"
+          >
+            Get in Touch
+          </a>
         </FadeUp>
 
       </div>

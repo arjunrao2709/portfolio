@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     id: 'ula',
     title: 'Ula',
-    role: 'Senior Product Designer',
+    role: 'Design Manager',
     year: '2021–22',
     tagline: 'Understanding Indonesia\'s 64 million warung owners.',
     description:
@@ -165,12 +165,12 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'ula',
     title: 'Ula',
-    role: 'Senior Product Designer',
+    role: 'Design Manager',
     year: '2021–22',
     accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
     overview:
-      'Ula is a B2B startup digitising Indonesia\'s informal retail economy: the millions of warungs (small neighbourhood stores) that form the backbone of how everyday goods move through the country. As Senior Product Designer, my most formative contribution was leading a 4-week field research sprint across seven Indonesian cities: 628 stores visited, 210 warung owners interviewed, and five distinct owner archetypes identified. The findings fundamentally changed how Ula designed its product.',
+      'Ula is a B2B startup digitising Indonesia\'s informal retail economy: the millions of warungs (small neighbourhood stores) that form the backbone of how everyday goods move through the country. As Design Manager, my most formative contribution was leading a 4-week field research sprint across seven Indonesian cities: 628 stores visited, 210 warung owners interviewed, and five distinct owner archetypes identified. The findings fundamentally changed how Ula designed its product.',
     challenge:
       'Before this research, Ula\'s product was being designed for a largely imagined user. "The warung owner" was treated as a single type of person with similar motivations and behaviours. But spend a week in Jadetabek and you quickly see how wrong that assumption is. A 35-year-old woman running a tech-enabled store with QR payments and WhatsApp procurement is not the same person as a retired 50-year-old man who inherited a store and opens it to pass the time. The challenge: we needed to understand who our users actually were before we could build anything useful for them.',
     sections: [
