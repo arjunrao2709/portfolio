@@ -14,7 +14,7 @@ const config: Config = {
         ink: {
           DEFAULT: '#0F0E0C',
           2: '#6A6660',
-          3: '#A8A49D',
+          3: '#706D6A', // darkened from #A8A49D — now 5.1:1 on white, 4.6:1 on warm (WCAG AA)
         },
         accent: {
           DEFAULT: '#1A6B4A',

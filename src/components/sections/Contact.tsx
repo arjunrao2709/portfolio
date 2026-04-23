@@ -62,7 +62,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.08 }}
                 transition={{ duration: 0.15 }}
                 aria-label={label}
-                className="w-10 h-10 border border-border flex items-center justify-center text-ink-3 hover:text-ink hover:border-border-strong transition-colors duration-200"
+                className="w-11 h-11 border border-border flex items-center justify-center text-ink-2 hover:text-ink hover:border-border-strong transition-colors duration-200"
               >
                 <Icon className="w-3.5 h-3.5" />
               </motion.a>

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { caseStudies } from '@/lib/content'
@@ -152,7 +152,23 @@ export default function CaseStudyPage({ params }: Props) {
           </section>
         )}
 
-        <div className="pt-10 border-t border-border flex items-center justify-between">
+        {/* Live site link */}
+        {cs.liveUrl && (
+          <section className="mb-14">
+            <a
+              href={cs.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-accent text-white px-6 py-4 hover:bg-accent-dark transition-colors duration-200"
+            >
+              <ExternalLink className="w-4 h-4 shrink-0" />
+              <span className="text-sm font-semibold">Check out the work in action</span>
+              <ArrowUpRight className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </section>
+        )}
+
+        <div className="pt-10 border-t border-border">
           <Link
             href="/#projects"
             className="inline-flex items-center gap-2 text-sm text-ink-2 hover:text-ink transition-colors duration-200"
@@ -160,7 +176,6 @@ export default function CaseStudyPage({ params }: Props) {
             <ArrowLeft className="w-4 h-4" />
             Back to all work
           </Link>
-          <ArrowUpRight className="w-4 h-4 text-ink-3" />
         </div>
       </main>
     </div>

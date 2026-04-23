@@ -159,6 +159,7 @@ export const caseStudies: CaseStudy[] = [
       { src: '/projects/theklub/screen-3.jpg', caption: 'after:Trip detail' },
       { src: '/projects/theklub/screen-4.jpg', caption: 'after:Ambassador portal' },
     ],
+    liveUrl: 'https://theklub.world',
   },
   {
     id: 'ula',

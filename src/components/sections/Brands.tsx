@@ -15,7 +15,7 @@ export default function Brands() {
           {doubled.map((brand, i) => (
             <span
               key={i}
-              className="text-sm font-semibold text-ink-3/50 hover:text-ink-2 transition-colors duration-300 shrink-0 select-none tracking-wide"
+              className="text-sm font-semibold text-ink-2 hover:text-ink transition-colors duration-300 shrink-0 select-none tracking-wide"
             >
               {brand.name}
             </span>

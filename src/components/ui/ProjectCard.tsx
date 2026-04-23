@@ -5,25 +5,12 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/types'
 
-const cardConfig: Record<string, { bg: string; accentColor: string; textColor: string }> = {
-  theklub: {
-    bg: '#0B2D1E',
-    accentColor: '#52B788',
-    textColor: 'rgba(255,255,255,0.85)',
-  },
-  ula: {
-    bg: '#0C1F3A',
-    accentColor: '#60A5FA',
-    textColor: 'rgba(255,255,255,0.85)',
-  },
-  stylepass: {
-    bg: '#2A0F1C',
-    accentColor: '#F4A0C0',
-    textColor: 'rgba(255,255,255,0.85)',
-  },
+const cardConfig: Record<string, { bg: string; accentColor: string }> = {
+  theklub:   { bg: '#0B2D1E', accentColor: '#52B788' },
+  ula:       { bg: '#0C1F3A', accentColor: '#60A5FA' },
+  stylepass: { bg: '#2A0F1C', accentColor: '#F4A0C0' },
 }
-
-const fallback = { bg: '#111', accentColor: '#999', textColor: 'rgba(255,255,255,0.7)' }
+const fallback = { bg: '#111', accentColor: '#888' }
 
 export default function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
   const cfg = cardConfig[project.id] ?? fallback
@@ -36,10 +23,10 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
         className={`relative overflow-hidden ${featured ? 'aspect-[16/8]' : 'aspect-[4/3]'}`}
         style={{ backgroundColor: cfg.bg }}
       >
-        {/* Background title texture */}
+        {/* Background title texture — decorative, aria-hidden */}
         <div
-          className="absolute inset-0 flex items-center justify-end pr-6 opacity-[0.05] select-none pointer-events-none overflow-hidden"
-          aria-hidden
+          className="absolute inset-0 flex items-center justify-end pr-6 opacity-[0.04] select-none pointer-events-none overflow-hidden"
+          aria-hidden="true"
         >
           <span
             className="font-serif font-black text-white"
@@ -55,7 +42,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
         {/* WIP badge */}
         {project.wip && (
           <div className="absolute top-4 right-4 z-10">
-            <span className="text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full border border-white/20 text-white/50">
+            <span className="text-xs font-medium tracking-wide px-2.5 py-1 rounded-full border border-white/40 text-white/80 bg-black/20">
               In progress
             </span>
           </div>
@@ -66,34 +53,34 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
           {/* Top row */}
           <div className="flex items-center justify-between">
             <span
-              className="text-[10px] font-semibold tracking-widest uppercase"
+              className="text-xs font-semibold tracking-widest uppercase"
               style={{ color: cfg.accentColor }}
             >
               {project.tags[0]}
             </span>
             <ArrowUpRight
               className="w-4 h-4 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              style={{ color: cfg.accentColor, opacity: 0.6 }}
+              style={{ color: cfg.accentColor, opacity: 0.7 }}
             />
           </div>
 
           {/* Bottom content */}
           <div>
             <h3
-              className={`font-serif font-bold text-white leading-tight mb-2 transition-colors duration-300 ${
+              className={`font-serif font-bold text-white leading-tight mb-2 ${
                 featured ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'
               }`}
             >
               {project.title}
             </h3>
-            <p className="text-xs mb-3" style={{ color: cfg.textColor, opacity: 0.5 }}>
+            <p className="text-sm text-white/60 mb-3">
               {project.role} · {project.year}
             </p>
+            {/* Tagline always visible — important context, not hidden behind hover */}
             <p
-              className={`text-sm leading-relaxed max-w-md transition-all duration-300 ${
-                featured ? 'opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0' : 'hidden md:block opacity-0 group-hover:opacity-100'
+              className={`text-sm text-white/80 leading-relaxed max-w-lg ${
+                featured ? '' : 'hidden md:block'
               }`}
-              style={{ color: cfg.textColor }}
             >
               {project.tagline}
             </p>
