@@ -17,7 +17,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40)
+    const handler = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
@@ -31,19 +31,19 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white/90 backdrop-blur-md border-b border-stone-200' : ''
+          scrolled ? 'bg-canvas/95 backdrop-blur-sm border-b border-border' : ''
         }`}
       >
-        <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 h-14 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 h-16 flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-sm font-semibold text-accent-primary hover:text-stone-900 transition-colors duration-200"
+            className="font-serif text-base font-bold text-ink hover:text-accent transition-colors duration-200"
           >
-            AR
+            Arjun Rao
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -51,7 +51,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-xs text-text-muted hover:text-stone-900 transition-colors duration-200"
+                className="text-sm text-ink-2 hover:text-ink transition-colors duration-200"
               >
                 {link.label}
               </button>
@@ -60,9 +60,10 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-text-muted hover:text-stone-900 transition-colors"
+            className="md:hidden text-ink-2 hover:text-ink transition-colors"
+            aria-label="Open menu"
           >
-            <Menu className="w-4 h-4" />
+            <Menu className="w-5 h-5" />
           </button>
         </div>
       </motion.header>
@@ -73,24 +74,26 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[100] bg-white flex flex-col items-start justify-center px-8"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] bg-canvas flex flex-col justify-center px-8"
           >
             <button
               onClick={() => setMenuOpen(false)}
-              className="absolute top-4 right-6 text-text-muted hover:text-stone-900 transition-colors"
+              className="absolute top-5 right-6 text-ink-2 hover:text-ink transition-colors"
+              aria-label="Close menu"
             >
-              <X className="w-4 h-4" />
+              <X className="w-5 h-5" />
             </button>
-            <nav className="flex flex-col gap-6">
+            <p className="font-serif text-sm font-bold text-ink mb-10">Arjun Rao</p>
+            <nav className="flex flex-col gap-4">
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.href}
-                  initial={{ opacity: 0, x: -10 }}
+                  initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.06, ease: [0.16, 1, 0.3, 1], duration: 0.4 }}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-2xl font-medium text-stone-900 hover:text-accent-primary transition-colors duration-200 text-left"
+                  className="font-serif text-4xl font-bold text-ink hover:text-accent transition-colors duration-200 text-left leading-tight"
                 >
                   {link.label}
                 </motion.button>

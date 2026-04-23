@@ -9,30 +9,52 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'accent-primary': '#C27D12',
+        canvas: '#FFFFFF',
+        warm: '#F5F2EB',
+        ink: {
+          DEFAULT: '#0F0E0C',
+          2: '#6A6660',
+          3: '#A8A49D',
+        },
+        accent: {
+          DEFAULT: '#1A6B4A',
+          dark: '#115038',
+          light: '#E5F4EC',
+        },
+        border: {
+          DEFAULT: '#E6E2DB',
+          strong: '#C5C1BA',
+        },
+        // Backward compat — updated values to match new palette
+        'accent-primary': '#1A6B4A',
         'bg-dark': '#FFFFFF',
-        'bg-light': '#F7F7F5',
-        'bg-card': '#F2F1EE',
-        'text-primary': '#111111',
-        'text-muted': '#888888',
-        'text-dark': '#111111',
+        'bg-light': '#F5F2EB',
+        'bg-card': '#F5F2EB',
+        'text-primary': '#0F0E0C',
+        'text-muted': '#A8A49D',
+        'text-dark': '#0F0E0C',
       },
       fontFamily: {
-        sans: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        sans: ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         'pulse-dot': {
-          '0%,100%': { opacity: '1' },
+          '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.3' },
         },
       },
       animation: {
-        'pulse-dot': 'pulse-dot 2.5s ease-in-out infinite',
+        marquee: 'marquee 40s linear infinite',
+        'pulse-dot': 'pulse-dot 2s ease-in-out infinite',
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
 }
 
 export default config

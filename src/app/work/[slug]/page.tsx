@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { caseStudies } from '@/lib/content'
@@ -30,54 +30,63 @@ export default function CaseStudyPage({ params }: Props) {
   const afterImages = cs.images.filter((img) => img.caption?.startsWith('after:'))
 
   return (
-    <div className="min-h-screen bg-bg-dark text-text-primary">
+    <div className="min-h-screen bg-canvas text-ink">
       {/* Back nav */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-bg-dark/90 backdrop-blur-md border-b border-white/[0.06]">
-        <div className="max-w-3xl mx-auto px-6 md:px-10 h-14 flex items-center">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-canvas/95 backdrop-blur-sm border-b border-border">
+        <div className="max-w-3xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-xs text-text-muted hover:text-white transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-sm text-ink-2 hover:text-ink transition-colors duration-200"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            Back
+            <ArrowLeft className="w-4 h-4" />
+            Back to work
           </Link>
+          <span className="font-serif text-sm font-bold text-ink">Arjun Rao</span>
         </div>
       </div>
 
-      <main className="max-w-3xl mx-auto px-6 md:px-10 pt-24 pb-24">
+      <main className="max-w-3xl mx-auto px-6 md:px-10 pt-28 pb-24">
+
         {/* Header */}
         <div className="mb-16">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-xs text-accent-primary font-medium">{cs.role}</span>
-            <span className="text-xs text-text-muted">{cs.year}</span>
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <span className="text-xs font-semibold text-accent tracking-wide">{cs.role}</span>
+            <span className="text-xs text-ink-3">{cs.year}</span>
             {cs.tags.map((tag) => (
-              <span key={tag} className="text-xs text-text-muted/50 border border-white/[0.07] px-2 py-0.5">
+              <span key={tag} className="text-xs text-ink-3 border border-border px-2.5 py-0.5">
                 {tag}
               </span>
             ))}
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-ink leading-tight mb-6">
             {cs.title}
           </h1>
-
-          <p className="text-base text-text-muted leading-relaxed">{cs.overview}</p>
+          <p className="text-base text-ink-2 leading-relaxed">{cs.overview}</p>
         </div>
 
         {/* Challenge */}
         <section className="mb-14">
-          <h2 className="text-xs text-accent-primary font-medium mb-4">The challenge</h2>
-          <p className="text-sm text-white/80 leading-relaxed">{cs.challenge}</p>
+          <div className="flex items-center gap-3 mb-5">
+            <span className="w-4 h-px bg-accent" />
+            <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">The Challenge</h2>
+          </div>
+          <p className="text-sm text-ink-2 leading-relaxed">{cs.challenge}</p>
         </section>
 
         {/* Before screens */}
         {beforeImages.length > 0 && (
           <section className="mb-14">
-            <h2 className="text-xs text-text-muted font-medium mb-5">Before</h2>
+            <h2 className="text-xs text-ink-3 font-medium mb-5 uppercase tracking-widest">Before</h2>
             <div className="grid grid-cols-3 gap-3">
               {beforeImages.map((img, i) => (
-                <div key={i} className="relative rounded-lg overflow-hidden border border-white/[0.06] aspect-[9/16] bg-bg-card">
-                  <Image src={img.src} alt={img.caption?.replace('before:', '') ?? ''} fill className="object-cover object-top" />
+                <div key={i} className="relative overflow-hidden border border-border aspect-[9/16] bg-warm">
+                  <Image
+                    src={img.src}
+                    alt={img.caption?.replace('before:', '') ?? ''}
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
               ))}
             </div>
@@ -86,24 +95,29 @@ export default function CaseStudyPage({ params }: Props) {
 
         {/* Metrics */}
         {cs.outcome.metrics.length > 0 && (
-          <section className="mb-14 grid grid-cols-2 md:grid-cols-4 gap-6 p-6 border border-white/[0.06] bg-bg-card">
-            {cs.outcome.metrics.map((m) => (
-              <div key={m.label}>
-                <div className="text-2xl font-semibold text-accent-primary mb-0.5">{m.value}</div>
-                <div className="text-xs text-text-muted leading-snug">{m.label}</div>
-              </div>
-            ))}
+          <section className="mb-14">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-warm border border-border">
+              {cs.outcome.metrics.map((m) => (
+                <div key={m.label}>
+                  <div className="font-serif text-2xl md:text-3xl font-bold text-accent mb-1">{m.value}</div>
+                  <div className="text-xs text-ink-3 leading-snug">{m.label}</div>
+                </div>
+              ))}
+            </div>
           </section>
         )}
 
         {/* Content sections */}
         {cs.sections.map((section, i) => (
           <section key={i} className="mb-14">
-            <h2 className="text-xs text-accent-primary font-medium mb-4">{section.label}</h2>
-            <h3 className="text-xl font-semibold text-white mb-5 leading-snug">{section.heading}</h3>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-4 h-px bg-accent" />
+              <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">{section.label}</h2>
+            </div>
+            <h3 className="font-serif text-xl md:text-2xl font-bold text-ink mb-5 leading-snug">{section.heading}</h3>
             <div className="space-y-4">
               {section.body.map((para, j) => (
-                <p key={j} className="text-sm text-text-muted leading-relaxed">{para}</p>
+                <p key={j} className="text-sm text-ink-2 leading-relaxed">{para}</p>
               ))}
             </div>
           </section>
@@ -112,11 +126,16 @@ export default function CaseStudyPage({ params }: Props) {
         {/* After screens */}
         {afterImages.length > 0 && (
           <section className="mb-14">
-            <h2 className="text-xs text-text-muted font-medium mb-5">After</h2>
+            <h2 className="text-xs text-ink-3 font-medium mb-5 uppercase tracking-widest">After</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {afterImages.map((img, i) => (
-                <div key={i} className="relative rounded-lg overflow-hidden border border-white/[0.06] aspect-[9/16] bg-bg-card">
-                  <Image src={img.src} alt={img.caption?.replace('after:', '') ?? ''} fill className="object-cover object-top" />
+                <div key={i} className="relative overflow-hidden border border-border aspect-[9/16] bg-warm">
+                  <Image
+                    src={img.src}
+                    alt={img.caption?.replace('after:', '') ?? ''}
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
               ))}
             </div>
@@ -125,20 +144,23 @@ export default function CaseStudyPage({ params }: Props) {
 
         {/* Outcome */}
         {cs.outcome.summary && (
-          <section className="mb-14 border-l border-accent-primary pl-5">
-            <h2 className="text-xs text-accent-primary font-medium mb-3">Outcome</h2>
-            <p className="text-sm text-white/80 leading-relaxed">{cs.outcome.summary}</p>
+          <section className="mb-14 border-l-2 border-accent pl-6">
+            <div className="flex items-center gap-3 mb-3">
+              <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">Outcome</h2>
+            </div>
+            <p className="text-sm text-ink-2 leading-relaxed">{cs.outcome.summary}</p>
           </section>
         )}
 
-        <div className="pt-10 border-t border-white/[0.06]">
+        <div className="pt-10 border-t border-border flex items-center justify-between">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-xs text-text-muted hover:text-white transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-sm text-ink-2 hover:text-ink transition-colors duration-200"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <ArrowLeft className="w-4 h-4" />
             Back to all work
           </Link>
+          <ArrowUpRight className="w-4 h-4 text-ink-3" />
         </div>
       </main>
     </div>

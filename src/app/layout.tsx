@@ -1,27 +1,29 @@
 import type { Metadata } from 'next'
-import { Raleway, Playfair_Display } from 'next/font/google'
+import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 
-const raleway = Raleway({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-raleway',
-  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-fraunces',
+  style: ['normal', 'italic'],
+  weight: ['300', '400', '700', '900'],
+  display: 'swap',
 })
 
-const playfair = Playfair_Display({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-playfair',
-  style: ['normal', 'italic'],
-  weight: ['400', '700'],
+  variable: '--font-jakarta',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Arjun Rao — Design Leader & Strategist',
+  title: 'Arjun Rao — Design Leader',
   description:
-    '10+ years leading design across enterprise, startup, and everything in between — building teams, products, and the systems that make both great.',
+    'Arjun Rao is a design leader building products and teams that shape how people live and work.',
   openGraph: {
-    title: 'Arjun Rao — Design Leader & Strategist',
-    description: 'Design leader, strategist, and builder. Crafting products and teams that scale.',
+    title: 'Arjun Rao — Design Leader',
+    description: 'Design leader, strategist, and builder. 10+ years crafting products and teams that matter.',
     type: 'website',
   },
 }
@@ -32,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${raleway.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased bg-white text-stone-900">
+    <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
+      <body className="font-sans antialiased bg-canvas text-ink">
         {children}
       </body>
     </html>

@@ -1,20 +1,26 @@
-import FadeUp from '@/components/motion/FadeUp'
-import StaggerContainer from '@/components/motion/StaggerContainer'
-import BrandLogo from '@/components/ui/BrandLogo'
+'use client'
+
 import { brands } from '@/lib/content'
 
 export default function Brands() {
+  const doubled = [...brands, ...brands, ...brands]
+
   return (
-    <section id="brands" className="bg-bg-light border-t border-stone-200 py-14 px-6 md:px-16 lg:px-24">
-      <div className="max-w-5xl mx-auto">
-        <FadeUp>
-          <p className="text-xs text-text-muted tracking-widest uppercase mb-8">Previously at</p>
-        </FadeUp>
-        <StaggerContainer stagger={0.06} className="flex flex-wrap items-center gap-x-10 gap-y-3">
-          {brands.map((brand) => (
-            <BrandLogo key={brand.name} name={brand.name} />
+    <section id="brands" className="bg-warm border-t border-border py-14 overflow-hidden">
+      <p className="text-xs text-ink-3 tracking-widest uppercase text-center mb-8 px-6">
+        Previously at
+      </p>
+      <div className="flex items-center">
+        <div className="flex items-center gap-20 animate-marquee whitespace-nowrap">
+          {doubled.map((brand, i) => (
+            <span
+              key={i}
+              className="text-sm font-semibold text-ink-3/50 hover:text-ink-2 transition-colors duration-300 shrink-0 select-none tracking-wide"
+            >
+              {brand.name}
+            </span>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   )
