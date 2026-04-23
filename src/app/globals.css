@@ -3,61 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --accent-primary: #F59E0B;
-  --accent-bright: #FCD34D;
-  --accent-secondary: #F97316;
-  --bg-dark: #0C0A14;
-  --bg-rich: #13111F;
-  --bg-light: #F8F7FF;
-  --bg-card: #1A1730;
-  --text-primary: #F1EEF9;
-  --text-muted: #9D93C0;
-  --text-dark: #1A1730;
+  --accent-primary: #FBBF24;
+  --bg-dark: #0A0A0A;
+  --bg-light: #FFFFFF;
+  --text-primary: #FFFFFF;
+  --text-muted: #666666;
+  --text-dark: #0A0A0A;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #0C0A14;
+  background-color: #0A0A0A;
 }
 
 body {
   font-family: var(--font-inter), sans-serif;
-  color: var(--text-primary);
-  background-color: var(--bg-dark);
+  color: #FFFFFF;
+  background-color: #0A0A0A;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0C0A14;
+  background: #0A0A0A;
 }
 ::-webkit-scrollbar-thumb {
-  background: #F59E0B;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #FCD34D;
-}
-
-/* Focus styles */
-*:focus-visible {
-  outline: 2px solid #F59E0B;
-  outline-offset: 3px;
+  background: #333333;
   border-radius: 2px;
 }
+::-webkit-scrollbar-thumb:hover {
+  background: #FBBF24;
+}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .gradient-text {
-    background: linear-gradient(135deg, #FCD34D, #F59E0B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+*:focus-visible {
+  outline: 2px solid #FBBF24;
+  outline-offset: 3px;
+  border-radius: 2px;
 }

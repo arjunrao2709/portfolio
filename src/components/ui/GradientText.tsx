@@ -7,12 +7,7 @@ interface GradientTextProps {
 
 export default function GradientText({ children, className }: GradientTextProps) {
   return (
-    <span
-      className={cn(
-        'bg-gradient-to-r from-accent-bright to-accent-primary bg-clip-text text-transparent',
-        className
-      )}
-    >
+    <span className={cn('text-accent-primary', className)}>
       {children}
     </span>
   )

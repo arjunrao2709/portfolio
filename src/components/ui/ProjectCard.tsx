@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
-import Badge from './Badge'
 import type { Project } from '@/types'
 import { cn } from '@/lib/cn'
 
@@ -15,69 +14,59 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -6, scale: 1.01 }}
-      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ backgroundColor: '#141414' }}
+      transition={{ duration: 0.2 }}
       className={cn(
-        'group relative bg-bg-card rounded-2xl overflow-hidden border border-white/5 cursor-pointer',
-        featured ? 'h-full min-h-[420px]' : 'min-h-[320px]'
+        'group relative bg-bg-dark border border-white/8 p-8 md:p-10 flex flex-col h-full',
+        featured ? 'min-h-[400px]' : 'min-h-[280px]'
       )}
-      style={{ borderTopColor: project.accent, borderTopWidth: '3px' }}
     >
-      {/* Background gradient on hover */}
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl"
-        style={{ background: `radial-gradient(circle at 30% 50%, ${project.accent}, transparent 70%)` }}
-      />
+      {/* Yellow top accent line */}
+      <div className="w-8 h-[2px] bg-accent-primary mb-8" />
 
-      <div className={cn('relative z-10 p-8 flex flex-col h-full', featured ? 'p-10' : 'p-8')}>
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.tags.map((tag) => (
-            <Badge key={tag} label={tag} variant="default" />
-          ))}
-        </div>
-
-        {/* Role + Year */}
-        <div className="flex items-center gap-3 mb-4">
-          <span
-            className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
-            style={{ color: project.accent, backgroundColor: `${project.accent}20`, border: `1px solid ${project.accent}40` }}
-          >
-            {project.role}
-          </span>
-          <span className="font-body text-xs text-text-muted">{project.year}</span>
-        </div>
-
-        {/* Title */}
-        <h3
-          className={cn(
-            'font-display font-bold text-text-primary group-hover:text-white transition-colors mb-3',
-            featured ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'
-          )}
-        >
-          {project.title}
-        </h3>
-
-        {/* Tagline */}
-        <p className="font-body text-accent-bright font-medium mb-4 text-lg">
-          {project.tagline}
-        </p>
-
-        {/* Description */}
-        <p className="font-body text-text-muted leading-relaxed flex-1">
-          {project.description}
-        </p>
-
-        {/* CTA */}
-        <Link
-          href={`/work/${project.id}`}
-          className="mt-8 inline-flex items-center gap-2 font-body font-semibold text-sm uppercase tracking-widest"
-          style={{ color: project.accent }}
-        >
-          <span>View Case Study</span>
-          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-        </Link>
+      {/* Role + Year */}
+      <div className="flex items-center gap-3 mb-5">
+        <span className="font-body text-xs font-semibold uppercase tracking-widest text-accent-primary">
+          {project.role}
+        </span>
+        <span className="font-body text-xs text-text-muted">{project.year}</span>
       </div>
+
+      {/* Title */}
+      <h3
+        className={cn(
+          'font-display font-bold text-white mb-3 leading-tight',
+          featured ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'
+        )}
+      >
+        {project.title}
+      </h3>
+
+      {/* Tagline */}
+      <p className="font-body text-text-muted mb-5 text-base leading-relaxed flex-1">
+        {project.description}
+      </p>
+
+      {/* Tags */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="font-body text-xs text-text-muted uppercase tracking-wider border border-white/10 px-2 py-0.5"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <Link
+        href={`/work/${project.id}`}
+        className="inline-flex items-center gap-2 font-body font-semibold text-xs uppercase tracking-widest text-white group-hover:text-accent-primary transition-colors duration-200"
+      >
+        <span>View Case Study</span>
+        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+      </Link>
     </motion.div>
   )
 }
