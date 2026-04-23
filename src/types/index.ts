@@ -7,6 +7,7 @@ export interface Project {
   description: string
   accent: string
   tags: string[]
+  wip?: boolean
 }
 
 export interface CaseStudySection {

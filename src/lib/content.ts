@@ -2,17 +2,6 @@ import type { Project, Brand, PhilosophyItem, LeadershipStat, CaseStudy } from '
 
 export const projects: Project[] = [
   {
-    id: 'stylepass',
-    title: 'StylePass.ai',
-    role: 'Head of Design',
-    year: '2023–24',
-    tagline: 'AI-powered personal styling at scale.',
-    description:
-      'Built the design function from scratch — from brand identity to AI-powered styling UX and a scalable design system serving thousands of users.',
-    accent: '#F59E0B',
-    tags: ['AI/ML Product', 'Consumer', 'Design System'],
-  },
-  {
     id: 'theklub',
     title: 'theKlub.world',
     role: 'Head of Product',
@@ -33,6 +22,18 @@ export const projects: Project[] = [
       'Redesigned the B2B purchasing experience for informal retailers in Indonesia, reducing friction across a complex supply chain and driving measurable increase in order completion rates.',
     accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
+  },
+  {
+    id: 'stylepass',
+    title: 'StylePass.ai',
+    role: 'Head of Design',
+    year: '2023–24',
+    tagline: 'AI-powered personal styling at scale.',
+    description:
+      'Built the design function from scratch — from brand identity to AI-powered styling UX and a scalable design system serving thousands of users.',
+    accent: '#F59E0B',
+    tags: ['AI/ML Product', 'Consumer', 'Design System'],
+    wip: true,
   },
 ]
 

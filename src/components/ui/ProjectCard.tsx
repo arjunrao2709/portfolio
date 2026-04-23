@@ -26,11 +26,16 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.2 }}
         className={cn(
-          'w-full rounded-sm overflow-hidden mb-4',
+          'w-full rounded-sm overflow-hidden mb-4 relative',
           bg,
           featured ? 'aspect-[4/3]' : 'aspect-[4/3]'
         )}
       >
+        {project.wip && (
+          <span className="absolute top-3 right-3 text-[10px] font-medium tracking-wide text-stone-500 bg-white/70 border border-stone-200 px-2 py-0.5 rounded-full">
+            Work in progress
+          </span>
+        )}
         <div className="w-full h-full flex items-end p-5">
           <span className="text-xs font-medium opacity-30 uppercase tracking-widest">
             {project.title}
