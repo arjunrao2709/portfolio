@@ -225,3 +225,16 @@ export const leadershipQuote = {
   text: "Design leadership isn't about making the best designs. It's about creating the environment where great design becomes inevitable.",
   attribution: 'Arjun Rao',
 }
+
+export const publications = [
+  {
+    title: 'Enabling Rural Women in India to Speculate Futures Through Games and Theatre: A Participatory Approach',
+    venue: 'Interactivity, Game Creation, Design, Learning, and Innovation',
+    conference: 'ArtsIT 2019 · DLI 2019',
+    publisher: 'Springer',
+    year: '2019',
+    abstract:
+      'Reports early findings from engaging in participatory and speculative design methods with rural women in Bihar, India. Outlines a contextualized workshop that includes participants as equal contributors to the design of their futures — arguing that in cultures with entrenched power structures, participatory design can give voice to the marginalised and uncover the complexities needed to design sustainable interventions.',
+    href: 'https://link.springer.com/chapter/10.1007/978-3-030-53294-9_47',
+  },
+]
