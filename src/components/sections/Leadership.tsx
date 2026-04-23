@@ -48,7 +48,6 @@ export default function Leadership() {
               <p className="font-serif text-lg md:text-xl text-ink italic leading-relaxed mb-5">
                 &ldquo;{leadershipQuote.text}&rdquo;
               </p>
-              <cite className="text-xs text-ink-3 not-italic">— {leadershipQuote.attribution}</cite>
             </blockquote>
           </FadeUp>
         </div>
