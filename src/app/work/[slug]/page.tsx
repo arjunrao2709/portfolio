@@ -63,14 +63,18 @@ export default function CaseStudyPage({ params }: Props) {
             {cs.title}
           </h1>
           <p className="text-base text-ink-2 leading-relaxed">{cs.overview}</p>
-
-          {cs.myRole && (
-            <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-xs font-semibold text-accent tracking-widest uppercase mb-2">My Role</p>
-              <p className="text-sm text-ink-2 leading-relaxed">{cs.myRole}</p>
-            </div>
-          )}
         </div>
+
+        {/* My Role */}
+        {cs.myRole && (
+          <section className="mb-14">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-4 h-px bg-accent" />
+              <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">My Role</h2>
+            </div>
+            <p className="text-sm text-ink-2 leading-relaxed">{cs.myRole}</p>
+          </section>
+        )}
 
         {/* Challenge */}
         <section className="mb-14">

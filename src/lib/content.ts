@@ -92,7 +92,7 @@ export const caseStudies: CaseStudy[] = [
         { value: '16×', label: 'Increase in ATC conversion' },
       ],
     },
-    myRole: 'Leading Design and Research.',
+    myRole: 'As Head of Design, I built the design function from zero: owning user research, end-to-end product design, and analytics integration across the full conversion funnel.',
     images: [
       { src: '/projects/stylepass/before-1.jpg', caption: 'before:Upload screen' },
       { src: '/projects/stylepass/before-2.jpg', caption: 'before:Processing, 1:55 wait' },
@@ -153,7 +153,7 @@ export const caseStudies: CaseStudy[] = [
         { value: '2', label: 'Research-driven pivots' },
       ],
     },
-    myRole: 'Led research, design, engineering processes, weekly experimentation, social media creative direction, sales, support and partnerships.',
+    myRole: 'As Head of Product, my remit covered the full business: product strategy, design, engineering team management, weekly growth experiments, social media creative direction, customer support, and partnerships.',
     images: [
       { src: '/projects/theklub/screen-1.jpg', caption: 'after:Homepage' },
       { src: '/projects/theklub/screen-2.jpg', caption: 'after:Trip discovery' },
@@ -214,7 +214,7 @@ export const caseStudies: CaseStudy[] = [
         { value: '103', label: 'High-potential stores segmented as primary users' },
       ],
     },
-    myRole: 'Led a team of 6 designers and 5 researchers.',
+    myRole: 'As Design Manager, I led a cross-functional team of 6 designers and 5 researchers, owning the research programme and translating field findings into product direction across seven Indonesian cities.',
     images: [],
     liveUrl: 'https://drive.google.com/file/d/15cbwlLK-u8qQrquXaTYoGdTGKdsrw7nv/view?usp=sharing',
     liveUrlLabel: 'View the research deck',
