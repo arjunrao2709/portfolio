@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { caseStudies } from '@/lib/content'
 import type { Metadata } from 'next'
 
@@ -25,11 +26,17 @@ export default function CaseStudyPage({ params }: Props) {
   const cs = caseStudies.find((c) => c.id === params.slug)
   if (!cs || !cs.overview) notFound()
 
+  const beforeImages = cs.images.filter((img) => img.caption?.startsWith('before:'))
+  const afterImages = cs.images.filter((img) => img.caption?.startsWith('after:'))
+  const otherImages = cs.images.filter(
+    (img) => !img.caption?.startsWith('before:') && !img.caption?.startsWith('after:')
+  )
+
   return (
     <div className="min-h-screen bg-bg-dark text-text-primary">
       {/* Back nav */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-4xl mx-auto px-6 md:px-10 h-14 flex items-center">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 h-14 flex items-center">
           <Link
             href="/#projects"
             className="inline-flex items-center gap-2 font-body text-sm text-text-muted hover:text-text-primary transition-colors duration-300 uppercase tracking-widest"
@@ -65,10 +72,8 @@ export default function CaseStudyPage({ params }: Props) {
             <span className="font-body text-text-muted">{cs.year}</span>
           </div>
 
-          {/* Accent rule */}
           <div className="h-[3px] w-16 rounded-full mb-12" style={{ backgroundColor: cs.accent }} />
 
-          {/* Overview */}
           <p className="font-body text-xl text-text-muted leading-relaxed">{cs.overview}</p>
         </div>
 
@@ -83,7 +88,28 @@ export default function CaseStudyPage({ params }: Props) {
           <p className="font-body text-lg text-text-primary leading-relaxed">{cs.challenge}</p>
         </section>
 
-        {/* Metrics — shown early for impact */}
+        {/* Before screens */}
+        {beforeImages.length > 0 && (
+          <section className="mb-20">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.3em] text-text-muted mb-6">
+              Before — v1
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {beforeImages.map((img, i) => (
+                <div key={i} className="relative rounded-2xl overflow-hidden border border-white/10 bg-bg-card aspect-[9/16]">
+                  <Image
+                    src={img.src}
+                    alt={img.caption?.replace('before:', '') ?? ''}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Metrics */}
         {cs.outcome.metrics.length > 0 && (
           <section className="mb-20 grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-2xl border border-white/5 bg-bg-card">
             {cs.outcome.metrics.map((m) => (
@@ -121,6 +147,44 @@ export default function CaseStudyPage({ params }: Props) {
             </div>
           </section>
         ))}
+
+        {/* After screens */}
+        {afterImages.length > 0 && (
+          <section className="mb-20">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.3em] text-text-muted mb-2">
+              After — Redesign
+            </p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-text-primary mb-8">
+              The redesigned experience
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {afterImages.map((img, i) => (
+                <div key={i} className="relative rounded-2xl overflow-hidden border border-white/10 bg-bg-card aspect-[9/16]">
+                  <Image
+                    src={img.src}
+                    alt={img.caption?.replace('after:', '') ?? ''}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Other images */}
+        {otherImages.length > 0 && (
+          <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {otherImages.map((img, i) => (
+              <div key={i} className="relative rounded-2xl overflow-hidden border border-white/10 bg-bg-card aspect-video">
+                <Image src={img.src} alt={img.caption ?? ''} fill className="object-cover" />
+                {img.caption && (
+                  <p className="absolute bottom-4 left-4 font-body text-xs text-white/60">{img.caption}</p>
+                )}
+              </div>
+            ))}
+          </section>
+        )}
 
         {/* Outcome */}
         {cs.outcome.summary && (
