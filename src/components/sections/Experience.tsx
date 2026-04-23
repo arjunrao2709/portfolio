@@ -39,6 +39,7 @@ export default function Experience() {
           >
             {experience.map((item, i) => {
               const above = i % 2 === 0
+              const dim = !item.current
               return (
                 <div key={item.company} className="flex flex-col items-center">
 
@@ -50,8 +51,8 @@ export default function Experience() {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ delay: i * 0.1 + 0.5, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                       >
-                        <p className="font-serif text-sm font-bold text-ink leading-tight">{item.company}</p>
-                        <p className="text-xs text-ink-3 mt-1.5 tabular-nums leading-snug">
+                        <p className={`font-serif text-sm font-bold leading-tight ${dim ? 'text-ink-3' : 'text-ink'}`}>{item.company}</p>
+                        <p className="text-xs text-ink-3 mt-1.5 tabular-nums leading-snug opacity-60">
                           {item.startDate} – {item.endDate}
                         </p>
                         {item.current && (
@@ -63,7 +64,7 @@ export default function Experience() {
 
                   {/* Dot on the line */}
                   <motion.div
-                    className="relative z-10 w-2.5 h-2.5 rounded-full bg-accent shrink-0"
+                    className={`relative z-10 w-2.5 h-2.5 rounded-full shrink-0 ${dim ? 'bg-border-strong' : 'bg-accent'}`}
                     style={{ boxShadow: '0 0 0 3px white' }}
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : {}}
@@ -78,8 +79,8 @@ export default function Experience() {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ delay: i * 0.1 + 0.5, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                       >
-                        <p className="font-serif text-sm font-bold text-ink leading-tight">{item.company}</p>
-                        <p className="text-xs text-ink-3 mt-1.5 tabular-nums leading-snug">
+                        <p className={`font-serif text-sm font-bold leading-tight ${dim ? 'text-ink-3' : 'text-ink'}`}>{item.company}</p>
+                        <p className="text-xs text-ink-3 mt-1.5 tabular-nums leading-snug opacity-60">
                           {item.startDate} – {item.endDate}
                         </p>
                       </motion.div>
@@ -95,7 +96,7 @@ export default function Experience() {
         {/* Mobile fallback — simple list */}
         <div className="md:hidden">
           {experience.map((item) => (
-            <div key={item.company} className="flex items-baseline justify-between py-5 border-b border-border">
+            <div key={item.company} className={`flex items-baseline justify-between py-5 border-b border-border ${!item.current ? 'opacity-50' : ''}`}>
               <div className="flex items-center gap-3 flex-wrap">
                 <span className="font-serif text-lg font-bold text-ink">{item.company}</span>
                 {item.current && (
