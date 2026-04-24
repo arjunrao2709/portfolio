@@ -80,7 +80,7 @@ export const caseStudies: CaseStudy[] = [
           'Social proof was refined: "3 people tried this recently" replaced the aggressive "🔥 21 people tried this in the past 1 hour", which felt like a pushy sales tactic rather than genuine reassurance.',
           'The biggest new surface was the Stylebook, a post-try-on feature showing the same garment styled for different occasions: Your Vibe, Date Night, Office Ready. This transformed the try-on from a functional question about fit into an aspirational tool for imagining yourself in different contexts. Shoppers spent more time engaged, and that correlated directly with higher conversion.',
           'I integrated product analytics across every funnel step as a first decision, not an afterthought. This became the feedback loop that let us move quickly and measure what was actually working.',
-          'Longer-term, I scoped and proposed a customisable avatar feature (similar to Bitmoji) that would let shoppers adjust body parameters to better represent themselves, addressing the dimensional accuracy concern at its root.',
+          'Longer-term, I scoped a share feature that lets shoppers send their try-on to friends for validation before buying. Beyond helping the shopper feel confident, it gives brands a source of social insight that sits entirely outside the website funnel: real people, sharing real outfits, in real contexts.',
         ],
       },
     ],
@@ -101,7 +101,7 @@ export const caseStudies: CaseStudy[] = [
       'Rebuilt the entire conversion journey from the ground up, taking try-on engagement from 6% to 30% and add-to-cart from below 0.5% to 8% in two months.',
       'Defined a design system that scaled from a single widget to a coherent product identity across the full brand.',
       'Wired analytics into every stage of the funnel from the start, making measurement a design habit rather than an afterthought.',
-      'Proposed and scoped longer-term product features, including a customisable avatar, that addressed the root causes of user drop-off.',
+      'Scoped a longer-term share feature that lets shoppers get validation from friends on outfits they are trying on — extending the product beyond the website funnel and giving brands a new source of social insight they could not get anywhere else.',
     ],
     images: [
       { src: '/projects/stylepass/stylepass_before_1.png', caption: 'before:Upload screen' },
