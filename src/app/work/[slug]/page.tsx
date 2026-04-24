@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { caseStudies } from '@/lib/content'
+import IPhoneFrame from '@/components/ui/IPhoneFrame'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -88,17 +89,20 @@ export default function CaseStudyPage({ params }: Props) {
         {/* Before screens */}
         {beforeImages.length > 0 && (
           <section className="mb-14">
-            <h2 className="text-xs text-ink-3 font-medium mb-5 uppercase tracking-widest">Before</h2>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-4 h-px bg-accent" />
+              <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">Before</h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               {beforeImages.map((img, i) => (
-                <div key={i} className="relative overflow-hidden border border-border aspect-[9/16] bg-warm">
+                <IPhoneFrame key={i}>
                   <Image
                     src={img.src}
                     alt={img.caption?.replace('before:', '') ?? ''}
                     fill
                     className="object-cover object-top"
                   />
-                </div>
+                </IPhoneFrame>
               ))}
             </div>
           </section>
@@ -137,17 +141,20 @@ export default function CaseStudyPage({ params }: Props) {
         {/* After screens */}
         {afterImages.length > 0 && (
           <section className="mb-14">
-            <h2 className="text-xs text-ink-3 font-medium mb-5 uppercase tracking-widest">After</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-4 h-px bg-accent" />
+              <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">After</h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {afterImages.map((img, i) => (
-                <div key={i} className="relative overflow-hidden border border-border aspect-[9/16] bg-warm">
+                <IPhoneFrame key={i}>
                   <Image
                     src={img.src}
                     alt={img.caption?.replace('after:', '') ?? ''}
                     fill
                     className="object-cover object-top"
                   />
-                </div>
+                </IPhoneFrame>
               ))}
             </div>
           </section>
