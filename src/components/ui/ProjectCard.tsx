@@ -39,27 +39,22 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
           </div>
         )}
 
-        {/* Screenshot image */}
+        {/* Full-bleed background image */}
         {project.image && (
-          <div
-            className={`absolute pointer-events-none select-none ${
-              featured
-                ? 'right-0 bottom-0 w-[52%] h-[115%]'
-                : 'right-0 bottom-0 w-[60%] h-[105%]'
-            }`}
-            style={{
-              maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%)',
-            }}
-          >
+          <>
             <Image
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover object-left-top"
-              sizes="(max-width: 768px) 60vw, 30vw"
+              className="object-cover object-top pointer-events-none select-none"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </div>
+            {/* Bottom gradient so text stays readable */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.1) 100%)' }}
+            />
+          </>
         )}
 
         {/* Top accent line */}
@@ -91,7 +86,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
           </div>
 
           {/* Bottom content */}
-          <div className={project.image ? 'max-w-[52%]' : ''}>
+          <div>
             <h3
               className={`font-serif font-bold text-white leading-tight mb-2 ${
                 featured ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'
