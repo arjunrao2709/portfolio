@@ -39,6 +39,7 @@ export interface CaseStudy {
   images: CaseStudyImage[]
   liveUrl?: string
   liveUrlLabel?: string
+  videoUrl?: string
 }
 
 export interface ExperienceItem {

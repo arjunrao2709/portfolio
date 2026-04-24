@@ -153,6 +153,25 @@ export default function CaseStudyPage({ params }: Props) {
           </section>
         )}
 
+        {/* Video embed */}
+        {cs.videoUrl && (
+          <section className="mb-14">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-4 h-px bg-accent" />
+              <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">In Action</h2>
+            </div>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={cs.videoUrl}
+                className="absolute inset-0 w-full h-full border border-border"
+                frameBorder="0"
+                scrolling="no"
+                allowFullScreen
+              />
+            </div>
+          </section>
+        )}
+
         {/* Outcome */}
         {cs.outcome.summary && (
           <section className="mb-14 border-l-2 border-accent pl-6">
