@@ -16,7 +16,7 @@ const hobbies = [
   {
     emoji: '🤿',
     title: 'Certified scuba diver',
-    body: 'I love being in and around nature — water especially. I\'m the one who will jump into freezing cold water. Why not?',
+    body: 'I love being in and around nature, water especially. I\'m the one who will jump into freezing cold water. Why not?',
   },
 ]
 

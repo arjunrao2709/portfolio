@@ -18,7 +18,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const cs = caseStudies.find((c) => c.id === params.slug)
   if (!cs) return {}
   return {
-    title: `${cs.title} — Arjun Rao`,
+    title: `${cs.title} · Arjun Rao`,
     description: cs.overview,
   }
 }

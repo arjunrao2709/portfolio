@@ -104,7 +104,7 @@ export const caseStudies: CaseStudy[] = [
       'Rebuilt the entire conversion journey from the ground up, taking try-on engagement from 6% to 30% and add-to-cart from below 0.5% to 8% in two months.',
       'Defined a design system that scaled from a single widget to a coherent product identity across the full brand.',
       'Wired analytics into every stage of the funnel from the start, making measurement a design habit rather than an afterthought.',
-      'Scoped a longer-term share feature that lets shoppers get validation from friends on outfits they are trying on — extending the product beyond the website funnel and giving brands a new source of social insight they could not get anywhere else.',
+      'Scoped a longer-term share feature that lets shoppers get validation from friends on outfits they are trying on, extending the product beyond the website funnel and giving brands a new source of social insight they could not get anywhere else.',
     ],
     images: [
       { src: '/projects/stylepass/stylepass_before_1.png', caption: 'before:Upload screen' },
@@ -233,7 +233,7 @@ export const caseStudies: CaseStudy[] = [
     myRole: 'As Design Manager, I led a cross-functional team of 6 designers and 5 researchers, owning the research programme and translating field findings into product direction across seven Indonesian cities.',
     myImpact: [
       'Led one of the most ambitious research programmes the company had run: 628 store visits and 210 interviews across seven cities in four weeks.',
-      'Synthesised field data into five owner archetypes that became the shared language across product, engineering, and operations — referenced in sprint planning, reviews, and hiring.',
+      'Synthesised field data into five owner archetypes that became the shared language across product, engineering, and operations, referenced in sprint planning, reviews, and hiring.',
       'Translated research directly into product decisions, reshaping the procurement flow, push notification strategy, and feature priorities around how different owners actually work.',
       'Made the explicit call to deprioritise one user segment entirely, giving the team clarity and focus rather than a product that tried to serve everyone.',
       'Elevated research into a decision-making function within the business, not a validation exercise run after product decisions were already made.',

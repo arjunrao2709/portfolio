@@ -18,11 +18,11 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Arjun Rao — Design Leader',
+  title: 'Arjun Rao · Design Leader',
   description:
     'Arjun Rao is a design leader building products and teams that shape how people live and work.',
   openGraph: {
-    title: 'Arjun Rao — Design Leader',
+    title: 'Arjun Rao · Design Leader',
     description: 'Design leader, strategist, and builder. 10+ years crafting products and teams that matter.',
     type: 'website',
   },
