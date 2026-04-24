@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: 'theklub',
     title: 'theKlub.world',
     role: 'Head of Product',
-    year: '2023–24',
+    year: 'Jun 2024 – Jan 2026',
     tagline: '',
     description:
       'Built a sports and wellness travel platform from zero to £30k/month through two research-driven pivots. Led product, design, social positioning, and engineering.',
@@ -17,7 +17,7 @@ export const projects: Project[] = [
     id: 'ula',
     title: 'Ula',
     role: 'Design Manager',
-    year: '2021–22',
+    year: 'Jul 2022 – May 2023',
     tagline: 'Understanding Indonesia\'s 64 million warung owners.',
     description:
       'Led a 4-week field research sprint across 7 Indonesian cities: 210 warung owners interviewed, 5 archetypes identified. The findings fundamentally repositioned how Ula designed its B2B procurement product.',
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     id: 'stylepass',
     title: 'StylePass.ai',
     role: 'Head of Design',
-    year: '2023–24',
+    year: 'Feb 2026 – Present',
     tagline: 'AI-powered personal styling at scale.',
     description:
       'Built the design function from scratch: from brand identity to AI-powered styling UX and a scalable design system serving thousands of users.',
@@ -47,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'stylepass',
     title: 'StylePass.ai',
     role: 'Head of Design',
-    year: '2023–24',
+    year: 'Feb 2026 – Present',
     accent: '#F59E0B',
     tags: ['AI/ML Product', 'Consumer', 'Design System'],
     overview:
@@ -119,7 +119,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'theklub',
     title: 'theKlub.world',
     role: 'Head of Product',
-    year: '2023–24',
+    year: 'Jun 2024 – Jan 2026',
     accent: '#FBBF24',
     tags: ['Travel', 'Sports & Wellness', '0→1'],
     overview:
@@ -182,7 +182,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'ula',
     title: 'Ula',
     role: 'Design Manager',
-    year: '2021–22',
+    year: 'Jul 2022 – May 2023',
     accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
     overview:
