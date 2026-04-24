@@ -153,12 +153,7 @@ export const caseStudies: CaseStudy[] = [
       ],
     },
     myRole: 'As Head of Product, my remit covered the full business: product strategy, design, engineering team management, weekly growth experiments, social media creative direction, customer support, and partnerships.',
-    images: [
-      { src: '/projects/theklub/screen-1.jpg', caption: 'after:Homepage' },
-      { src: '/projects/theklub/screen-2.jpg', caption: 'after:Trip discovery' },
-      { src: '/projects/theklub/screen-3.jpg', caption: 'after:Trip detail' },
-      { src: '/projects/theklub/screen-4.jpg', caption: 'after:Ambassador portal' },
-    ],
+    images: [],
     liveUrl: 'https://theklub.world',
     videoUrl: 'https://short.icu/J9qads2KY',
   },
