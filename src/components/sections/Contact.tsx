@@ -32,10 +32,10 @@ export default function Contact() {
 
         <FadeUp delay={0.16}>
           <a
-            href="mailto:hello@arjunrao.design"
+            href="mailto:arjunrao2709@gmail.com"
             className="inline-block text-base md:text-lg font-semibold text-ink hover:text-accent transition-colors duration-200 mb-10 underline underline-offset-4 decoration-border-strong hover:decoration-accent"
           >
-            hello@arjunrao.design
+            arjunrao2709@gmail.com
           </a>
         </FadeUp>
 
