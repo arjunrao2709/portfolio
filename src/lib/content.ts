@@ -155,7 +155,7 @@ export const caseStudies: CaseStudy[] = [
     myRole: 'As Head of Product, my remit covered the full business: product strategy, design, engineering team management, weekly growth experiments, social media creative direction, customer support, and partnerships.',
     images: [],
     liveUrl: 'https://theklub.world',
-    videoUrl: 'https://short.icu/J9qads2KY',
+    videoUrl: 'https://jumpshare.com/embed/uZymx72y4p9iUp5BinN5',
   },
   {
     id: 'ula',
