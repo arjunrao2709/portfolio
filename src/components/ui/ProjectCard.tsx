@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/types'
 
@@ -23,18 +24,43 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
         className={`relative overflow-hidden ${featured ? 'aspect-[16/8]' : 'aspect-[4/3]'}`}
         style={{ backgroundColor: cfg.bg }}
       >
-        {/* Background title texture — decorative, aria-hidden */}
-        <div
-          className="absolute inset-0 flex items-center justify-end pr-6 opacity-[0.04] select-none pointer-events-none overflow-hidden"
-          aria-hidden="true"
-        >
-          <span
-            className="font-serif font-black text-white"
-            style={{ fontSize: featured ? '10rem' : '7rem', lineHeight: 1, whiteSpace: 'nowrap' }}
+        {/* Background title texture — decorative */}
+        {!project.image && (
+          <div
+            className="absolute inset-0 flex items-center justify-end pr-6 opacity-[0.04] select-none pointer-events-none overflow-hidden"
+            aria-hidden="true"
           >
-            {project.title}
-          </span>
-        </div>
+            <span
+              className="font-serif font-black text-white"
+              style={{ fontSize: featured ? '10rem' : '7rem', lineHeight: 1, whiteSpace: 'nowrap' }}
+            >
+              {project.title}
+            </span>
+          </div>
+        )}
+
+        {/* Screenshot image */}
+        {project.image && (
+          <div
+            className={`absolute pointer-events-none select-none ${
+              featured
+                ? 'right-0 bottom-0 w-[52%] h-[115%]'
+                : 'right-0 bottom-0 w-[60%] h-[105%]'
+            }`}
+            style={{
+              maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%)',
+            }}
+          >
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover object-left-top"
+              sizes="(max-width: 768px) 60vw, 30vw"
+            />
+          </div>
+        )}
 
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ backgroundColor: cfg.accentColor }} />
@@ -65,7 +91,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
           </div>
 
           {/* Bottom content */}
-          <div>
+          <div className={project.image ? 'max-w-[52%]' : ''}>
             <h3
               className={`font-serif font-bold text-white leading-tight mb-2 ${
                 featured ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'
@@ -76,7 +102,6 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
             <p className="text-sm text-white/60 mb-3">
               {project.role} · {project.year}
             </p>
-            {/* Tagline always visible — important context, not hidden behind hover */}
             <p
               className={`text-sm text-white/80 leading-relaxed max-w-lg ${
                 featured ? '' : 'hidden md:block'

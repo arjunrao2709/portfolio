@@ -11,6 +11,7 @@ export const projects: Project[] = [
       'Built a sports and wellness travel platform from zero to £30k/month through two research-driven pivots. Led product, design, social positioning, and engineering.',
     accent: '#FBBF24',
     tags: ['Travel', 'Sports & Wellness', '0→1'],
+    image: '/projects/theklub/theKlub-Home.png',
   },
   {
     id: 'ula',
@@ -34,6 +35,7 @@ export const projects: Project[] = [
     accent: '#F59E0B',
     tags: ['AI/ML Product', 'Consumer', 'Design System'],
     wip: true,
+    image: '/projects/stylepass/stylepass-home.png',
   },
 ]
 

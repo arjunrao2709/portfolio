@@ -8,6 +8,7 @@ export interface Project {
   accent: string
   tags: string[]
   wip?: boolean
+  image?: string
 }
 
 export interface CaseStudySection {
