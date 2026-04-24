@@ -32,6 +32,7 @@ export interface CaseStudy {
   overview: string
   challenge: string
   myRole?: string
+  myImpact?: string[]
   sections: CaseStudySection[]
   outcome: {
     summary: string

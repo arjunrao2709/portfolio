@@ -77,6 +77,24 @@ export default function CaseStudyPage({ params }: Props) {
           </section>
         )}
 
+        {/* My Impact */}
+        {cs.myImpact && cs.myImpact.length > 0 && (
+          <section className="mb-14">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-4 h-px bg-accent" />
+              <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">My Impact</h2>
+            </div>
+            <div className="space-y-4">
+              {cs.myImpact.map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-[6px] shrink-0" />
+                  <p className="text-sm text-ink-2 leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Challenge */}
         <section className="mb-14">
           <div className="flex items-center gap-3 mb-5">
