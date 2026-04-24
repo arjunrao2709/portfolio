@@ -9,6 +9,7 @@ export interface Project {
   tags: string[]
   wip?: boolean
   image?: string
+  imagePosition?: string
 }
 
 export interface CaseStudySection {

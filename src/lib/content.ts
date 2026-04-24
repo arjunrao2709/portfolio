@@ -24,6 +24,7 @@ export const projects: Project[] = [
     accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
     image: '/projects/ula/ula-home.jpg',
+    imagePosition: 'center',
   },
   {
     id: 'stylepass',

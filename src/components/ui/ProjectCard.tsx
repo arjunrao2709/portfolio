@@ -46,7 +46,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover object-top pointer-events-none select-none"
+              className={`object-cover pointer-events-none select-none ${project.imagePosition ? `object-${project.imagePosition}` : 'object-top'}`}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* Bottom gradient so text stays readable */}
