@@ -163,16 +163,17 @@ export default function CaseStudyPage({ params }: Props) {
               <span className="w-4 h-px bg-accent" />
               <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">After</h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {afterImages.map((img, i) => (
-                <IPhoneFrame key={i}>
+                <div key={i} className="relative aspect-[9/19] w-full">
                   <Image
                     src={img.src}
                     alt={img.caption?.replace('after:', '') ?? ''}
                     fill
-                    className="object-cover object-top"
+                    className="object-contain"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
-                </IPhoneFrame>
+                </div>
               ))}
             </div>
           </section>
