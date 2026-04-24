@@ -29,7 +29,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
       <motion.div
         whileHover={{ y: featured ? -3 : -4 }}
         transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-        className={`relative overflow-hidden ${featured ? 'aspect-[16/8]' : 'aspect-[4/3]'}`}
+        className={`relative overflow-hidden rounded-2xl ${featured ? 'aspect-[16/8]' : 'aspect-[4/3]'}`}
         style={{ backgroundColor: cfg.bg }}
       >
         {/* Background title texture — decorative */}

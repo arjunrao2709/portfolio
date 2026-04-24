@@ -129,7 +129,7 @@ export default function CaseStudyPage({ params }: Props) {
         {/* Metrics */}
         {cs.outcome.metrics.length > 0 && (
           <section className="mb-14">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-warm border border-border">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-warm border border-border rounded-2xl">
               {cs.outcome.metrics.map((m) => (
                 <div key={m.label}>
                   <div className="font-serif text-2xl md:text-3xl font-bold text-accent mb-1">{m.value}</div>
@@ -165,7 +165,7 @@ export default function CaseStudyPage({ params }: Props) {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {afterImages.map((img, i) => (
-                <div key={i} className="relative aspect-[9/19] w-full">
+                <div key={i} className="relative aspect-[9/19] w-full rounded-2xl overflow-hidden">
                   <Image
                     src={img.src}
                     alt={img.caption?.replace('after:', '') ?? ''}
@@ -214,7 +214,7 @@ export default function CaseStudyPage({ params }: Props) {
               href={cs.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-accent text-white px-6 py-4 hover:bg-accent-dark transition-colors duration-200"
+              className="group inline-flex items-center gap-3 bg-accent text-white px-6 py-4 rounded-xl hover:bg-accent-dark transition-colors duration-200"
             >
               <ExternalLink className="w-4 h-4 shrink-0" />
               <span className="text-sm font-semibold">{cs.liveUrlLabel ?? 'Check out the work in action'}</span>

@@ -46,7 +46,7 @@ export default function Hero() {
 
           {/* Right — headshot */}
           <FadeUp delay={0.1}>
-            <div className="relative w-full aspect-[3/4] overflow-hidden">
+            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl">
               <Image
                 src="/headshot.jpg"
                 alt="Arjun Rao"

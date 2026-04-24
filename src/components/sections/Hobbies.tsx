@@ -32,10 +32,10 @@ export default function Hobbies() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {hobbies.map((hobby, i) => (
             <FadeUp key={hobby.title} delay={i * 0.08}>
-              <div className="bg-canvas p-8 md:p-10 h-full">
+              <div className="bg-canvas rounded-2xl p-8 md:p-10 h-full border border-border">
                 <span className="text-3xl mb-6 block" role="img" aria-label={hobby.title}>
                   {hobby.emoji}
                 </span>
