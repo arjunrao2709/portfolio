@@ -74,8 +74,12 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
           {/* Top row */}
           <div className="flex items-center justify-between">
             <span
-              className="text-xs font-semibold tracking-widest uppercase"
-              style={{ color: cfg.accentColor }}
+              className="text-xs font-semibold tracking-widest uppercase px-2.5 py-1 rounded-sm"
+              style={{
+                color: cfg.accentColor,
+                backgroundColor: 'rgba(0,0,0,0.45)',
+                backdropFilter: 'blur(6px)',
+              }}
             >
               {project.tags[0]}
             </span>
