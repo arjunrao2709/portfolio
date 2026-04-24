@@ -167,13 +167,12 @@ export default function CaseStudyPage({ params }: Props) {
               <span className="w-4 h-px bg-accent" />
               <h2 className="text-xs font-semibold text-accent tracking-widest uppercase">In Action</h2>
             </div>
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
               <iframe
                 src={cs.videoUrl}
-                className="absolute inset-0 w-full h-full border border-border"
                 frameBorder="0"
-                scrolling="no"
                 allowFullScreen
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
               />
             </div>
           </section>
