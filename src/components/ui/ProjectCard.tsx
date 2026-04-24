@@ -6,6 +6,14 @@ import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/types'
 
+const imagePositionClass: Record<string, string> = {
+  'top': 'object-top',
+  'center': 'object-center',
+  'bottom': 'object-bottom',
+  'left-top': 'object-left-top',
+  'right-top': 'object-right-top',
+}
+
 const cardConfig: Record<string, { bg: string; accentColor: string }> = {
   theklub:   { bg: '#0B2D1E', accentColor: '#52B788' },
   ula:       { bg: '#0C1F3A', accentColor: '#60A5FA' },
@@ -46,7 +54,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
               src={project.image}
               alt={project.title}
               fill
-              className={`object-cover pointer-events-none select-none ${project.imagePosition ? `object-${project.imagePosition}` : 'object-top'}`}
+              className={`object-cover pointer-events-none select-none ${imagePositionClass[project.imagePosition ?? 'top'] ?? 'object-top'}`}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* Bottom gradient so text stays readable */}

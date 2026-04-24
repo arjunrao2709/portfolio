@@ -38,6 +38,7 @@ export const projects: Project[] = [
     tags: ['AI/ML Product', 'Consumer', 'Design System'],
     wip: true,
     image: '/projects/stylepass/stylepass-home.png',
+    imagePosition: 'left-top',
   },
 ]
 
