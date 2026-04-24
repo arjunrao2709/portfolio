@@ -52,7 +52,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
             {/* Bottom gradient so text stays readable */}
             <div
               className="absolute inset-0 pointer-events-none"
-              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.1) 100%)' }}
+              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.2) 65%, rgba(0,0,0,0.05) 100%)' }}
             />
           </>
         )}
@@ -94,11 +94,11 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
             >
               {project.title}
             </h3>
-            <p className="text-sm text-white/60 mb-3">
+            <p className="text-sm text-white/80 mb-3">
               {project.role} · {project.year}
             </p>
             <p
-              className={`text-sm text-white/80 leading-relaxed max-w-lg ${
+              className={`text-sm text-white/90 leading-relaxed max-w-lg ${
                 featured ? '' : 'hidden md:block'
               }`}
             >
