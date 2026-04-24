@@ -23,6 +23,7 @@ export const projects: Project[] = [
       'Led a 4-week field research sprint across 7 Indonesian cities: 210 warung owners interviewed, 5 archetypes identified. The findings fundamentally repositioned how Ula designed its B2B procurement product.',
     accent: '#FCD34D',
     tags: ['Emerging Markets', 'B2B', 'Scale'],
+    image: '/projects/ula/ula-home.jpg',
   },
   {
     id: 'stylepass',
