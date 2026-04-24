@@ -86,11 +86,11 @@ export const caseStudies: CaseStudy[] = [
     ],
     outcome: {
       summary:
-        'Within two months of the redesigned experience going live, the numbers told a clear story.',
+        'The experiments ran across multiple brands over three months. The results were strong enough that the new experience is now being rolled out as the default across the platform.',
       metrics: [
         { value: '30%', label: 'Try-on engagement (up from 6%)' },
         { value: '8%', label: 'Add-to-cart conversion (up from <0.5%)' },
-        { value: '2mo', label: 'Time to results' },
+        { value: '3mo', label: 'Experiment period' },
         { value: '16×', label: 'Increase in ATC conversion' },
       ],
     },
