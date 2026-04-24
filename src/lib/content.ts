@@ -106,6 +106,10 @@ export const caseStudies: CaseStudy[] = [
     images: [
       { src: '/projects/stylepass/stylepass_before_1.png', caption: 'before:Upload screen' },
       { src: '/projects/stylepass/stylepass_before_2.png', caption: 'before:Processing state' },
+      { src: '/projects/stylepass/after-1.png', caption: 'after:See it on you' },
+      { src: '/projects/stylepass/after-2.png', caption: 'after:Photo confirmation' },
+      { src: '/projects/stylepass/after-3.png', caption: 'after:Try-on result' },
+      { src: '/projects/stylepass/after-4.png', caption: 'after:Stylebook' },
     ],
   },
   {
