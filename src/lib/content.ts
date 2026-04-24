@@ -236,6 +236,7 @@ export const caseStudies: CaseStudy[] = [
       'Made the explicit call to deprioritise one user segment entirely, giving the team clarity and focus rather than a product that tried to serve everyone.',
       'Elevated research into a decision-making function within the business, not a validation exercise run after product decisions were already made.',
       'Raised the standard for synthesis and storytelling across the team, helping designers and researchers think beyond data toward clear strategic recommendation.',
+      'Led the creation of a design system that unified all internal platforms and the multiple sub-segments of the product, reducing duplication and improving the pace at which both design and engineering could work.',
     ],
     images: [],
     liveUrl: 'https://drive.google.com/file/d/15cbwlLK-u8qQrquXaTYoGdTGKdsrw7nv/view?usp=sharing',
