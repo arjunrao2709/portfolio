@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: 'theKlub.world',
     role: 'Head of Product',
     year: '2023–24',
-    tagline: 'Your new home for active travel.',
+    tagline: '',
     description:
       'Built a sports and wellness travel platform from zero to £30k/month through two research-driven pivots. Led product, design, social positioning, and engineering.',
     accent: '#FBBF24',

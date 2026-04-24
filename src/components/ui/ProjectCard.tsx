@@ -29,7 +29,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
       <motion.div
         whileHover={{ y: featured ? -3 : -4 }}
         transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-        className={`relative overflow-hidden rounded-2xl ${featured ? 'aspect-[16/8]' : 'aspect-[4/3]'}`}
+        className={`relative overflow-hidden rounded-2xl aspect-[4/3] ${featured ? 'md:aspect-[16/8]' : ''}`}
         style={{ backgroundColor: cfg.bg }}
       >
         {/* Background title texture — decorative */}
@@ -109,6 +109,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
             <p className="text-sm text-white/80 mb-3">
               {project.role} · {project.year}
             </p>
+            {project.tagline && (
             <p
               className={`text-sm text-white/90 leading-relaxed max-w-lg ${
                 featured ? '' : 'hidden md:block'
@@ -116,6 +117,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
             >
               {project.tagline}
             </p>
+            )}
           </div>
         </div>
 
